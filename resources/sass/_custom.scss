@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Mada:wght@200;300;400;500;600;700;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+//reset da pgina
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: 0;
+    outline: 0;
+    font-family: 'Roboto', sans-serif;
+}
+//paralax
+//imagem paralax no body
+.body-paralax {
+    background: url($bg-img);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+//cor e tamanho de fonte do texto
+.custom-title {
+    font-size: 1.5rem;
+    color: $dark;
+}
+
+.custom-title-italic {
+    font-size: 1.5rem !important;
+    color: $success !important;
+    font-style: italic !important;
+}
+
+.custom-title-italic-2 {
+    font-size: 1.5rem !important;
+    color: $light  !important;
+    font-style: italic !important;
+}
+
+.custom-sub-title {
+    font-size: 1.25rem !important;
+    color: $dark !important;
+}
+.custom-sub-title-2 {
+    font-size: 1.25rem !important;
+    color: $light !important;
+}
+
+.custom-sub-title-italic {
+    font-size: 1.25rem;
+    color: $dark;
+    font-style: italic;
+}
+
+.custom-text {
+    font-size: 1rem;
+    color: $dark;
+}
+
+.custom-text-italic {
+    font-size: 1rem;
+    color: $dark;
+    font-style: italic;
+}
+
+.custom-text-small {
+    font-size: 0.875rem !important;
+    color: $success !important;
+}
+
+.custom-text-small-italic {
+    font-size: 0.875rem;
+    color: $dark;
+    font-style: italic;
+}
+
+.custom-text-x-small {
+    font-size: 0.75rem;
+    color: $dark;
+}
+
+.custom-text-x-small-italic {
+    font-size: 0.75rem !important;
+    color: $dark !important;
+    font-style: italic !important;
+}
+
+.custom-text-nav {
+    font-size: 1rem !important;
+    color: $dark  !important;
+    font-weight: 600 !important;
+
+    &:hover {
+        color: $danger  !important;
+    }
+}
+
+//botões personalizados
+.custom-btn-primary {
+    background-color: $btn-primary-bg  !important;
+    color: $btn-primary-color  !important;
+    border: 1px solid $btn-primary-border  !important;
+
+    &:hover {
+        background-color: $btn-primary-bg  !important;
+        color: $btn-primary-color  !important;
+        border: 1px solid $btn-primary-border  !important;
+        opacity: 0.8 !important;
+    }
+}
+
+.custom-btn-secondary {
+    background-color: $btn-secondary-bg  !important;
+    color: $btn-secondary-color  !important;
+    border: 1px solid $btn-secondary-border  !important;
+
+    &:hover {
+        background-color: $btn-secondary-bg  !important;
+        color: $btn-secondary-color  !important;
+        border: 1px solid $btn-secondary-border  !important;
+        opacity: 0.8 !important;
+    }
+}
+
+.custom-btn-success {
+    background-color: $btn-success-bg !important;
+    color: $btn-success-color !important;
+    border: 1px solid $btn-success-border !important;
+
+    &:hover {
+        background-color: $btn-success-bg;
+        color: $btn-success-color;
+        border: 1px solid $btn-success-border;
+    }
+}
+
+.custom-btn-danger {
+    background-color: $btn-danger-bg !important;
+    color: $btn-danger-color !important;
+    border: 1px solid $btn-danger-border !important;
+
+    &:hover {
+        background-color: $btn-danger-bg !important;
+        color: $btn-danger-color !important;
+        border: 1px solid $btn-danger-border !important;
+    }
+}
+
+.custom-btn-warning {
+    background-color: $btn-warning-bg;
+    color: $btn-warning-color;
+    border: 1px solid $btn-warning-border;
+
+    &:hover {
+        background-color: $btn-warning-bg;
+        color: $btn-warning-color;
+        border: 1px solid $btn-warning-border;
+    }
+}
+
+.custom-btn-info {
+    background-color: $btn-info-bg !important;
+    color: $btn-info-color !important;
+    border: 1px solid $btn-info-border !important;
+
+    &:hover {
+        background-color: $btn-info-bg !important;
+        color: $btn-info-color !important;
+        border: 1px solid $btn-info-border !important;
+    }
+}
+
+//texto links
+.custom-link {
+    color: $btn-success-color;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+        color: $blue-light;
+        text-decoration: none;
+    }
+}
+
+//formulários
+.custom-input {
+    background-color: $input-bg;
+    color: $input-color;
+    border: 1px solid $input-border;
+
+    &:focus {
+        background-color: $input-bg;
+        color: $input-color;
+        border: 1px solid $input-border-focus;
+    }
+}
+
+.custom-input::placeholder {
+    color: $input-color-placeholder;
+}
+
+//gradiente de fundo das imagens
+.custom-gradient {
+    -webkit-mask-image: $gradient-primary;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.custom-gradient-secondary {
+    -webkit-mask-image: $gradient-secondary;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.custom-gradient-light {
+    -webkit-mask-image: $gradient-light;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.custom-gradient-dark {
+    -webkit-mask-image: $gradient-dark;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+//efeito nas imagens dos cards
+.custom-card-img-effect {
+    transition: 0.5s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+//efeito de transicao lateral da sessao
+.custom-transition {
+    transition: 0.5s;
+
+    &:hover {
+        transform: translateX(10px);
+    }
+}

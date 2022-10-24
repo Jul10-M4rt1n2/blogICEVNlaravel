@@ -1,0 +1,38 @@
+.carousel-custom-image-bg{
+    -webkit-mask-image: $gradient-primary;
+}
+
+#cards .container .row .card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+#footer-navbar .navbar .container .navbar-brand img {
+    width: 70px;
+    height: 70px;
+}
+
+/**style dots*/
+.pagination-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $dark  !important;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination-dot.active {
+    background-color: $primary  !important;
+}
+
+#stretched-link {
+    backdrop-filter: blur(10px);
+}
+
+@media(max-width: 768px) {
+    #section-worne {
+        padding: 0 !important;	
+    }
+}

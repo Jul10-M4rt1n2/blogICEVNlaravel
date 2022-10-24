@@ -1,0 +1,61 @@
+// Body
+$body-bg: #F8FAFC;
+
+// Typography
+$font-family-serif: 'Roboto Serif', serif;
+$font-size-lg: 1rem;
+$line-height-lg: 1.6;
+
+//Colors
+$primary: #7B44FA;
+$secondary: #413CDE;
+$blue: #4E75F5;
+$blue-secondary: #44CFFA;
+$blue-light: #E8F0FF;
+$success: #4BB543;
+$danger: #F44336;
+$warning: #FFC107;
+$info: #00BCD4;
+$light: #F8FAFC;
+$dark: #212529;
+
+//bg image
+$bg-img: ("/assets/image/paralax-img.jpg");
+$bg-img-2: ("/assets/image/banner-ebq.jpg");
+
+//gradient
+$gradient-primary: linear-gradient(0deg,
+        rgba(0, 212, 255, 0) 0%,
+        rgba(123, 68, 250, 1) 25%);
+$gradient: linear-gradient(90deg, #7B44FA 0%, #413CDE 100%);
+$gradient-secondary: linear-gradient(90deg, #44CFFA 0%, #4E75F5 100%);
+$gradient-light: linear-gradient(90deg, #E8F0FF 0%, #F8FAFC 100%);
+$gradient-dark: linear-gradient(0deg, #212529 0%, #212529 25%);
+
+//Buttons
+$btn-primary-bg: #7B44FA;
+$btn-primary-color: #fff;
+$btn-primary-border: #7B44FA;
+$btn-secondary-bg: #413CDE;
+$btn-secondary-color: #fff;
+$btn-secondary-border: #413CDE;
+$btn-success-bg: #4BB543;
+$btn-success-color: #fff;
+$btn-success-border: #4BB543;
+$btn-danger-bg: #F44336;
+$btn-danger-color: #fff;
+$btn-danger-border: #F44336;
+$btn-warning-bg: #FFC107;
+$btn-warning-color: #fff;
+$btn-warning-border: #FFC107;
+$btn-info-bg: #00BCD4;
+$btn-info-color: #fff;
+$btn-info-border: #00BCD4;
+
+// Forms
+$input-bg: #fff;
+$input-border: #E4E7ED;
+$input-border-focus: #7B44FA;
+$input-color: #212529;
+$input-color-placeholder: #BEC1D2;
+$input-box-shadow: 0 0 0 0.2rem rgba(123, 68, 250, 0.25);
