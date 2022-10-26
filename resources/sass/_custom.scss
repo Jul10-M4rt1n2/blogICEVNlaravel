@@ -235,6 +235,9 @@
     background-attachment: fixed;
 }
 
+.custom-gradient-dark-2 {
+    background: $gradient-dark-2;
+}
 //efeito nas imagens dos cards
 .custom-card-img-effect {
     transition: 0.5s;

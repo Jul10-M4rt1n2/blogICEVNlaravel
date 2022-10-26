@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\Painel\HomeController;
 use App\Http\Controllers\Painel\PainelController;
+use App\Http\Controllers\site\BookSiteController;
 use App\Http\Controllers\Site\HomeSiteController;
 
 /*
@@ -23,6 +24,8 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/detalhes-do-post-2', [HomeSiteController::class, 'detalhesPost2'])->name('site.detalhesPost2');
     Route::get('/detalhes-do-post-3', [HomeSiteController::class, 'detalhesPost3'])->name('site.detalhesPost3');
     Route::get('detalhes-do-post-4', [HomeSiteController::class, 'detalhesPost4'])->name('site.detalhesPost4');
+    //Rotas da pagina livros e revistas
+    Route::get('/livros-e-revistas', [BookSiteController::class, 'index'])->name('site.books');
 });
 
 //rota de login

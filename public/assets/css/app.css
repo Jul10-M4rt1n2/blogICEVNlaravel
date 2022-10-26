@@ -225,6 +225,10 @@
   background-attachment: fixed;
 }
 
+.custom-gradient-dark-2 {
+  background: linear-gradient(267deg, rgba(0, 0, 0, 0.2973564426) 0%, rgb(0, 0, 0) 50%);
+}
+
 .custom-card-img-effect {
   transition: 0.5s;
 }

@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item custom-card-img-effect">
-                        <a class="nav-link custom-text-nav" href="#"><i class="fa-solid fa-book"></i> Livros e revistas</a>
+                        <a class="nav-link custom-text-nav" href="{{ route('site.books') }}"><i class="fa-solid fa-book"></i> Livros e revistas</a>
                     </li>
                     <li class="nav-item custom-card-img-effect">
                         <a class="nav-link custom-text-nav" href="#"><i class="fa-solid fa-calendar-days"></i> Programacoes</a>
