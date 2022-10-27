@@ -49,7 +49,7 @@
                 </div> --}}
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fa-solid fa-book"></i> Livros e revistas</a>
+                <a class="nav-link text-white" href="{{ route('painel.books') }}"><i class="fa-solid fa-book"></i> Livros e revistas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="#"><i class="fa-solid fa-calendar-days"></i> Programacoes</a>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\AuthController;
+use App\Http\Controllers\painel\BookController;
 use App\Http\Controllers\Painel\HomeController;
 use App\Http\Controllers\Painel\PainelController;
 use App\Http\Controllers\site\BookSiteController;
@@ -26,6 +27,7 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('detalhes-do-post-4', [HomeSiteController::class, 'detalhesPost4'])->name('site.detalhesPost4');
     //Rotas da pagina livros e revistas
     Route::get('/livros-e-revistas', [BookSiteController::class, 'index'])->name('site.books');
+    Route::get('/livros-e-revistas/detalhes-do-livro-1', [BookSiteController::class, 'detalhesLivro'])->name('site.detalhesLivro');
 });
 
 //rota de login
@@ -43,5 +45,12 @@ Route::group(['namespace' => 'Dashboard', 'prefix' => 'sistema'],function ()
         Route::get('/home/editar/{id}', [HomeController::class, 'edit'])->name('painel-home-edit');
         Route::put('/home/update/{id}', [HomeController::class, 'update'])->name('painel-home-update');
         Route::delete('/home/destroy/{id}', [HomeController::class, 'destroy'])->name('painel-home-destroy');
+        //Rotas da pagina livros e revistas
+        Route::get('/livros-e-revistas', [BookController::class, 'index'])->name('painel.books');
+        Route::get('/livros-e-revistas/cadastrar', [BookController::class, 'create'])->name('painel-books-create');
+        Route::post('/livros-e-revistas/store', [BookController::class, 'store'])->name('painel-books-store');
+        Route::get('/livros-e-revistas/editar/{id}', [BookController::class, 'edit'])->name('painel-books-edit');
+        Route::put('/livros-e-revistas/update/{id}', [BookController::class, 'update'])->name('painel-books-update');
+        Route::delete('/livros-e-revistas/destroy/{id}', [BookController::class, 'destroy'])->name('painel-books-destroy');
     }
 );

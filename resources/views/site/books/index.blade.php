@@ -81,7 +81,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-3 d-block">
-                        <a href="" class="card-link">
+                        <a href="{{ route('site.detalhesLivro') }}" class="card-link">
                             <div class="card border border-0 shadow" style="width: 18rem;">
                                 <img src="{{ asset('assets/image/julio.jpg') }}" class="card-img custom-card-img-effect"
                                     alt="...">

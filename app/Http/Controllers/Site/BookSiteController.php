@@ -11,4 +11,9 @@ class BookSiteController extends Controller
     {
         return view('site.books.index');
     }
+
+    public function detalhesLivro()
+    {
+        return view('site.books.detalhesLivro');
+    }
 }
