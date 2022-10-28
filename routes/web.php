@@ -27,7 +27,7 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('detalhes-do-post-4', [HomeSiteController::class, 'detalhesPost4'])->name('site.detalhesPost4');
     //Rotas da pagina livros e revistas
     Route::get('/livros-e-revistas', [BookSiteController::class, 'index'])->name('site.books');
-    Route::get('/livros-e-revistas/detalhes-do-livro-1', [BookSiteController::class, 'detalhesLivro'])->name('site.detalhesLivro');
+    Route::get('/livros-e-revistas/{id}', [BookSiteController::class, 'show'])->name('site.show');
 });
 
 //rota de login

@@ -89,7 +89,7 @@ class BookController extends Controller
             return redirect()->route('books.index')->with('success', 'Livro cadastrado com sucesso!');
         } catch (\Exception $e) {
             //retorna a mensagem de erro
-            return redirect()->back()->with('error', 'Erro ao cadastrar o livro!');
+            return redirect()->route('painel.books')->with('error', 'Erro ao cadastrar o livro!');
         }
     }
 
@@ -122,7 +122,7 @@ class BookController extends Controller
             ]);
         } catch (\Exception $e) {
             //retorna a mensagem de erro
-            return redirect()->back()->with('error', 'Erro ao editar o livro!');
+            return redirect()->route('painel.books')->with('error', 'Erro ao editar o livro!');
         }
     }
 
@@ -143,7 +143,7 @@ class BookController extends Controller
             return redirect()->route('books.index')->with('success', 'Livro editado com sucesso!');
         } catch (\Exception $e) {
             //retorna a mensagem de erro
-            return redirect()->back()->with('error', 'Erro ao editar o livro!');
+            return redirect()->route('painel.books')->with('error', 'Erro ao editar o livro!');
         }
     }
 
@@ -163,7 +163,7 @@ class BookController extends Controller
             return redirect()->route('books.index')->with('success', 'Livro excluido com sucesso!');
         } catch (\Exception $e) {
             //retorna a mensagem de erro
-            return redirect()->back()->with('error', 'Erro ao excluir o livro!');
+            return redirect()->route('painel.books')->with('error', 'Erro ao excluir o livro!');
         }
     }
 }

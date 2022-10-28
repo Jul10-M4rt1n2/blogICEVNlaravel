@@ -3,17 +3,31 @@
 namespace App\Http\Controllers\site;
 
 use App\Http\Controllers\Controller;
+use App\Services\Contracts\BookServiceInterface;
 use Illuminate\Http\Request;
 
 class BookSiteController extends Controller
 {
+    public function __construct(BookServiceInterface $model)
+    {
+        $this->model = $model;
+    }
+    
     public function index()
     {
-        return view('site.books.index');
+        $registros = $this->model->all();
+        $registro = $registros->last();
+        return view('site.books.index', [
+            'registros' => $registros,
+            'registro' => $registro
+        ]);
     }
 
-    public function detalhesLivro()
+    public function show($id)
     {
-        return view('site.books.detalhesLivro');
+        $registro = $this->model->find($id);
+        return view('site.books.show', [
+            'registro' => $registro
+        ]);
     }
 }
