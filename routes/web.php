@@ -7,6 +7,7 @@ use App\Http\Controllers\Painel\HomeController;
 use App\Http\Controllers\Painel\PainelController;
 use App\Http\Controllers\site\BookSiteController;
 use App\Http\Controllers\Site\HomeSiteController;
+use App\Http\Controllers\site\TimelineSiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::group(['namespace' => 'Site'], function () {
     //Rotas da pagina livros e revistas
     Route::get('/livros-e-revistas', [BookSiteController::class, 'index'])->name('site.books');
     Route::get('/livros-e-revistas/{id}', [BookSiteController::class, 'show'])->name('site.show');
+    //Rotas da pagina de cronograma timeline
+    Route::get('/cronograma', [TimelineSiteController::class, 'index'])->name('site.timeline');
 });
 
 //rota de login
@@ -54,3 +57,5 @@ Route::group(['namespace' => 'Dashboard', 'prefix' => 'sistema'],function ()
         Route::delete('/livros-e-revistas/destroy/{id}', [BookController::class, 'destroy'])->name('painel-books-destroy');
     }
 );
+//criar tabela category que vai se a tabela people e a tabela date_hors php artisan make:model Category -m
+//criar a tabela timeline que pegar as tabelas category, people e date_hors php artisan make:model Timeline -m

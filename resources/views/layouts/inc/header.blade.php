@@ -13,7 +13,7 @@
                         <a class="nav-link custom-text-nav" href="{{ route('site.books') }}"><i class="fa-solid fa-book"></i> Livros e revistas</a>
                     </li>
                     <li class="nav-item custom-card-img-effect">
-                        <a class="nav-link custom-text-nav" href="#"><i class="fa-solid fa-calendar-days"></i> Programacoes</a>
+                        <a class="nav-link custom-text-nav" href="{{ route('site.timeline') }}"><i class="fa-solid fa-calendar-days"></i> Programacoes</a>
                     </li>
                     <li class="nav-item custom-card-img-effect">
                         <a class="nav-link custom-text-nav" href="#"><i class="fa-solid fa-photo-film"></i> Mideas</a>
