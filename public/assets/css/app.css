@@ -276,6 +276,11 @@
   background: url("/assets/image/banner-ebq.jpg") !important;
 }
 
+@media (max-width: 768px) {
+  .navMobile {
+    background-color: #4E75F5 !important;
+  }
+}
 .custom-bg-footer {
   background-color: #212529;
 }

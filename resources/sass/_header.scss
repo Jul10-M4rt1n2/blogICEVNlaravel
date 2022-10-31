@@ -1,6 +1,7 @@
 .custom-bg-header {
     background-color: transparent;
 }
+
 #navbar {
     position: fixed;
     z-index: 1000;
@@ -9,19 +10,29 @@
     display: block;
     transition: top 1s;
 }
+
 .navbar .container .navbar-brand img {
     width: 100px;
 }
+
 .custom-bg-section {
     background-color: $blue !important;
 }
+
 .custom-bg-section-2 {
     background-color: $warning !important;
 }
+
 .custom-bord-card {
     border: 4px solid $light !important;
 }
 
 .custom-bg-img {
     background: url($bg-img-2) !important;
+}
+
+@media(max-width: 768px) {
+    .navMobile {
+        background-color: $blue !important;
+    }
 }
