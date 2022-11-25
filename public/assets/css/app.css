@@ -280,6 +280,9 @@
   .navMobile {
     background-color: #4E75F5 !important;
   }
+  .title-mobile {
+    min-width: 60% !important;
+  }
 }
 .custom-bg-footer {
   background-color: #212529;

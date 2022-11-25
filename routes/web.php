@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\painel\BookController;
 use App\Http\Controllers\Painel\HomeController;
 use App\Http\Controllers\Painel\PainelController;
+use App\Http\Controllers\painel\TimelineController;
 use App\Http\Controllers\site\BookSiteController;
 use App\Http\Controllers\Site\HomeSiteController;
 use App\Http\Controllers\site\TimelineSiteController;
@@ -55,7 +56,12 @@ Route::group(['namespace' => 'Dashboard', 'prefix' => 'sistema'],function ()
         Route::get('/livros-e-revistas/editar/{id}', [BookController::class, 'edit'])->name('painel-books-edit');
         Route::put('/livros-e-revistas/update/{id}', [BookController::class, 'update'])->name('painel-books-update');
         Route::delete('/livros-e-revistas/destroy/{id}', [BookController::class, 'destroy'])->name('painel-books-destroy');
+        //Rotas da pagina de cronograma timeline
+        Route::get('/cronograma', [TimelineController::class, 'index'])->name('painel.timeline');
+        Route::get('/cronograma/cadastrar', [TimelineController::class, 'create'])->name('painel-timeline-create');
+        Route::post('/cronograma/store', [TimelineController::class, 'store'])->name('painel-timeline-store');
+        Route::get('/cronograma/editar/{id}', [TimelineController::class, 'edit'])->name('painel-timeline-edit');
+        Route::put('/cronograma/update/{id}', [TimelineController::class, 'update'])->name('painel-timeline-update');
+        Route::delete('/cronograma/destroy/{id}', [TimelineController::class, 'destroy'])->name('painel-timeline-destroy');
     }
 );
-//criar tabela category que vai se a tabela people e a tabela date_hors php artisan make:model Category -m
-//criar a tabela timeline que pegar as tabelas category, people e date_hors php artisan make:model Timeline -m

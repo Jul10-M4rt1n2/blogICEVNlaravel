@@ -8,7 +8,7 @@
     <div id="timeline" class="container-fluid py-5 bg-warning">
         <div class="col-12 py-5">
             <div class="row">
-                <div class="title w-25 bg-white">
+                <div class="title title-mobile w-25 bg-white">
                     <h1>Programações</h1>
                 </div>
             </div>
@@ -19,29 +19,37 @@
                 <div class="row">
                     <div class="table-responsive">
                         <table class="table table-dark table-striped">
-                            <tr>
-                                <th>Horário Inicial</th>
-                                <th>Horário Término</th>
-                                <th>Segunda</th>
-                                <th>Terça</th>
-                                <th>Quarta</th>
-                                <th>Quinta</th>
-                                <th>Sexta</th>
-                                <th>Sábado</th>
-                                <th>Domingo</th>
-                            </tr>
-                            <!--tabela com as linhas de horarios-->
-                            <tr>
-                                <td>09:00:00</td>
-                                <td>10:30:00</td>
-                                <td>N/A</td>
-                                <td>N/A</td>
-                                <td>Oracao</td>
-                                <td>N/A</td>
-                                <td>N/A</td>
-                                <td>Encontro de jovens</td>
-                                <td>Culto da Família</td>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th>Horário Inicial</th>
+                                    <th>Horário Término</th>
+                                    <th>Data</th>
+                                    <th>Dia da semana</th>
+                                    <th>Descricao</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--verificando se a tabela esta vazia e exibindo a mensagem Nenhum registro encontrado-->
+                                @if (!$registros->isEmpty())
+                                    @foreach ($registros as $item)
+                                        <tr>
+                                            <td>{{ $item->start_time }}</td>
+                                            <td>{{ $item->end_time }}</td>
+                                            <td>{{ $item->date }}</td>
+                                            <td>{{ $item->day }}</td>
+                                            <td>{{ $item->description }}</td>
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    <tr>
+                                        <td colspan="10" class="text-center">
+                                            <div class="alert alert-warning mb-0" role="alert">
+                                                Nenhum registro encontrado
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endif
+                            </tbody>
                         </table>
                     </div>
                 </div>
