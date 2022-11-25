@@ -1,6 +1,53 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./resources/js/api_instagram.js":
+/*!***************************************!*\
+  !*** ./resources/js/api_instagram.js ***!
+  \***************************************/
+/***/ (() => {
+
+$(document).ready(function () {
+  var token = 'IGQVJWUjN4b1V5YzR6VXFPeENNTXN3U1RiSHktNmtVM3NCLU9Id1FtSUJPNEwtYW1WalJHRlVyQ25ybV9xWUtXd0dnMXY1Q1YxVlNJMWl4WTJFSEMybHlTVEJkamwxYnJzVlFSWk8xMTVPWllyV2NudwZDZD';
+  var fields = 'id,media_type,media_url,thumbnail_url,timestamp,permalink,caption';
+  var limit = 9;
+  $.ajax({
+    url: 'https://graph.instagram.com/me/media?fields=' + fields + '&access_token=' + token + '&limit=' + limit,
+    type: 'GET',
+    success: function success(response) {
+      for (var x in response.data) {
+        var link = response.data[x]['permalink'],
+            caption = response.data[x]['caption'],
+            image = response.data[x]['media_url'],
+            image_video = response.data[x]['thumbnail_url'],
+            html = '';
+
+        if (response.data[x]['media_type'] == 'VIDEO') {
+          html += '<div class="col-4 float-start">';
+          html += '<a class="insta-link" href="' + link + '" rel="noopener" target="_blank">';
+          html += '<img src="' + image_video + '" loading="lazy" alt="' + caption + '" class="img-fluid" style="object-fit: cover;width:120px;height:120px" />';
+          html += '</a>';
+          html += '</div>';
+        } else {
+          html += '<div class="col-4 float-start">';
+          html += '<a class="insta-link" href="' + link + '" rel="noopener" target="_blank">';
+          html += '<img src="' + image + '" loading="lazy" alt="' + caption + '" class="img-fluid"  style="object-fit: cover;width:120px;height:120px" />';
+          html += '</a>';
+          html += '</div>';
+        }
+
+        $('#instafeed').append(html);
+      }
+    },
+    error: function error(data) {
+      var html = '<div class="class-no-data">No Images Found</div>';
+      $('#instafeed').append(html);
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -14,6 +61,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_home__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./jquery */ "./resources/js/jquery.js");
 /* harmony import */ var _jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _api_instagram__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./api_instagram */ "./resources/js/api_instagram.js");
+/* harmony import */ var _api_instagram__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_api_instagram__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
