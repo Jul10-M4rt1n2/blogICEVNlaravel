@@ -1,6 +1,6 @@
 $(document).ready(function(){
     
-    var token ='IGQVJWUjN4b1V5YzR6VXFPeENNTXN3U1RiSHktNmtVM3NCLU9Id1FtSUJPNEwtYW1WalJHRlVyQ25ybV9xWUtXd0dnMXY1Q1YxVlNJMWl4WTJFSEMybHlTVEJkamwxYnJzVlFSWk8xMTVPWllyV2NudwZDZD';
+    var token ='IGQVJXUXNsTHJkNWdSM1ZAWOWxPSHA5ZAGV4Y2JJUjNzSFhZAZAE9QTmZA6ZA2Q2aXE2b09taV9janVncFJuVW9yNVRqeEhURHJzZA1B5QnlUMGxPeUUwdk55TXRDQ3VCTFFYZAmhRbWNiNmVNRHBkR0k1clhfYQZDZD';
     var fields = 'id,media_type,media_url,thumbnail_url,timestamp,permalink,caption';
     var limit = 9; 
 
@@ -16,15 +16,15 @@ $(document).ready(function(){
                     html = '';
                 if ( response.data[x]['media_type'] == 'VIDEO' ) { 
                    
-                    html += '<div class="col-4 float-start">';
+                    html += '<div class="col-4 float-start py-2">';
                     html += '<a class="insta-link" href="' + link + '" rel="noopener" target="_blank">';
-                    html += '<img src="' + image_video + '" loading="lazy" alt="' + caption + '" class="img-fluid" style="object-fit: cover;width:120px;height:120px" />';
+                    html += '<img src="' + image_video + '" loading="lazy" alt="' + caption + '" class="img-fluid"/>';
                     html += '</a>';
                     html += '</div>'; 
                 } else { 
-                    html += '<div class="col-4 float-start">';
+                    html += '<div class="col-4 float-start py-2">';
                     html += '<a class="insta-link" href="' + link + '" rel="noopener" target="_blank">';
-                    html += '<img src="' + image + '" loading="lazy" alt="' + caption + '" class="img-fluid"  style="object-fit: cover;width:120px;height:120px" />';
+                    html += '<img src="' + image + '" loading="lazy" alt="' + caption + '" class="img-fluid"/>';
                     html += '</a>';
                     html += '</div>';
                 } 

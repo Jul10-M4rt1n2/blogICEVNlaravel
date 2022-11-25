@@ -19,7 +19,7 @@
                                 class="fa-solid fa-calendar-days"></i> Programacoes</a>
                     </li>
                     <li class="nav-item custom-card-img-effect">
-                        <a class="nav-link custom-text-nav" href="#"><i class="fa-solid fa-photo-film"></i>
+                        <a class="nav-link custom-text-nav" href="{{ route('site.mideas') }}"><i class="fa-solid fa-photo-film"></i>
                             Mideas</a>
                     </li>
                     <li class="nav-item custom-card-img-effect">

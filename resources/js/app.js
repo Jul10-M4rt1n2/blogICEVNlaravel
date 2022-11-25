@@ -1,4 +1,3 @@
-import '../sass/app.scss';
-import './home';
-import './jquery';
-import './api_instagram';
+window.$ = window.jQuery = require('jquery');
+require('./home');
+require('./api_instagram');
