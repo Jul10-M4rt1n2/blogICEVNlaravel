@@ -1,11 +1,11 @@
 $(document).ready(function(){
     
-    var token ='IGQVJXUXNsTHJkNWdSM1ZAWOWxPSHA5ZAGV4Y2JJUjNzSFhZAZAE9QTmZA6ZA2Q2aXE2b09taV9janVncFJuVW9yNVRqeEhURHJzZA1B5QnlUMGxPeUUwdk55TXRDQ3VCTFFYZAmhRbWNiNmVNRHBkR0k1clhfYQZDZD';
+    var token ='IGQVJVbU9NLTBiVzZA6QjNWSVkyTzlkdWdLZADROcG9CSndwOVQ5a3NsOTZATQkk5WmVmdFZAVZAV9ncXYxZAm1SZAnBhbjd1UjRxQTlsZAm1hTDVPQ2JKVXdYWWM2NmRzRWFUZAmFyTDBOY3BnYnhvOW1DWnpTbwZDZD';
     var fields = 'id,media_type,media_url,thumbnail_url,timestamp,permalink,caption';
     var limit = 9; 
 
     $.ajax ( {
-        url: 'https://graph.instagram.com/me/media?fields='+ fields +'&access_token='+ token +'&limit='+ limit,
+        url: 'https://graph.instagram.com/me/media?fields='+ fields +'&access_token='+ token,
         type: 'GET',
         success: function( response ) {
             for( var x in response.data ) { 
@@ -16,14 +16,14 @@ $(document).ready(function(){
                     html = '';
                 if ( response.data[x]['media_type'] == 'VIDEO' ) { 
                    
-                    html += '<div class="col-4 float-start py-2">';
-                    html += '<a class="insta-link" href="' + link + '" rel="noopener" target="_blank">';
+                    html += '<div class="card border border-0 shadow img-mobile-custon" style="width: 15%;">';
+                    html += '<a class="card-link" href="' + link + '" rel="noopener" target="_blank">';
                     html += '<img src="' + image_video + '" loading="lazy" alt="' + caption + '" class="img-fluid"/>';
                     html += '</a>';
                     html += '</div>'; 
                 } else { 
-                    html += '<div class="col-4 float-start py-2">';
-                    html += '<a class="insta-link" href="' + link + '" rel="noopener" target="_blank">';
+                    html += '<div class="card border border-0 shadow img-mobile-custon" style="width: 15%;">';
+                    html += '<a class="card-link" href="' + link + '" rel="noopener" target="_blank">';
                     html += '<img src="' + image + '" loading="lazy" alt="' + caption + '" class="img-fluid"/>';
                     html += '</a>';
                     html += '</div>';

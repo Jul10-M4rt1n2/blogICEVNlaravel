@@ -11,6 +11,7 @@
     outline: 0;
     font-family: 'Roboto', sans-serif;
 }
+
 //paralax
 //imagem paralax no body
 .body-paralax {
@@ -36,7 +37,7 @@
 
 .custom-title-italic-2 {
     font-size: 1.5rem !important;
-    color: $light  !important;
+    color: $light !important;
     font-style: italic !important;
 }
 
@@ -44,6 +45,7 @@
     font-size: 1.25rem !important;
     color: $dark !important;
 }
+
 .custom-sub-title-2 {
     font-size: 1.25rem !important;
     color: $light !important;
@@ -90,37 +92,37 @@
 
 .custom-text-nav {
     font-size: 1rem !important;
-    color: $dark  !important;
+    color: $dark !important;
     font-weight: 600 !important;
 
     &:hover {
-        color: $danger  !important;
+        color: $danger !important;
     }
 }
 
 //botões personalizados
 .custom-btn-primary {
-    background-color: $btn-primary-bg  !important;
-    color: $btn-primary-color  !important;
-    border: 1px solid $btn-primary-border  !important;
+    background-color: $btn-primary-bg !important;
+    color: $btn-primary-color !important;
+    border: 1px solid $btn-primary-border !important;
 
     &:hover {
-        background-color: $btn-primary-bg  !important;
-        color: $btn-primary-color  !important;
-        border: 1px solid $btn-primary-border  !important;
+        background-color: $btn-primary-bg !important;
+        color: $btn-primary-color !important;
+        border: 1px solid $btn-primary-border !important;
         opacity: 0.8 !important;
     }
 }
 
 .custom-btn-secondary {
-    background-color: $btn-secondary-bg  !important;
-    color: $btn-secondary-color  !important;
-    border: 1px solid $btn-secondary-border  !important;
+    background-color: $btn-secondary-bg !important;
+    color: $btn-secondary-color !important;
+    border: 1px solid $btn-secondary-border !important;
 
     &:hover {
-        background-color: $btn-secondary-bg  !important;
-        color: $btn-secondary-color  !important;
-        border: 1px solid $btn-secondary-border  !important;
+        background-color: $btn-secondary-bg !important;
+        color: $btn-secondary-color !important;
+        border: 1px solid $btn-secondary-border !important;
         opacity: 0.8 !important;
     }
 }
@@ -238,6 +240,7 @@
 .custom-gradient-dark-2 {
     background: $gradient-dark-2;
 }
+
 //efeito nas imagens dos cards
 .custom-card-img-effect {
     transition: 0.5s;
@@ -253,5 +256,19 @@
 
     &:hover {
         transform: translateX(10px);
+    }
+}
+
+//modile medea page
+@media(max-width: 789px) {
+    .mobile-version-cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .img-mobile-custon{
+        width: 100% !important;
+        height: 100% !important;
     }
 }

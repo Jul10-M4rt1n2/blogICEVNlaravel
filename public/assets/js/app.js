@@ -8,11 +8,11 @@
 /***/ (() => {
 
 $(document).ready(function () {
-  var token = 'IGQVJXUXNsTHJkNWdSM1ZAWOWxPSHA5ZAGV4Y2JJUjNzSFhZAZAE9QTmZA6ZA2Q2aXE2b09taV9janVncFJuVW9yNVRqeEhURHJzZA1B5QnlUMGxPeUUwdk55TXRDQ3VCTFFYZAmhRbWNiNmVNRHBkR0k1clhfYQZDZD';
+  var token = 'IGQVJVbU9NLTBiVzZA6QjNWSVkyTzlkdWdLZADROcG9CSndwOVQ5a3NsOTZATQkk5WmVmdFZAVZAV9ncXYxZAm1SZAnBhbjd1UjRxQTlsZAm1hTDVPQ2JKVXdYWWM2NmRzRWFUZAmFyTDBOY3BnYnhvOW1DWnpTbwZDZD';
   var fields = 'id,media_type,media_url,thumbnail_url,timestamp,permalink,caption';
   var limit = 9;
   $.ajax({
-    url: 'https://graph.instagram.com/me/media?fields=' + fields + '&access_token=' + token + '&limit=' + limit,
+    url: 'https://graph.instagram.com/me/media?fields=' + fields + '&access_token=' + token,
     type: 'GET',
     success: function success(response) {
       for (var x in response.data) {
@@ -23,14 +23,14 @@ $(document).ready(function () {
             html = '';
 
         if (response.data[x]['media_type'] == 'VIDEO') {
-          html += '<div class="col-4 float-start py-2">';
-          html += '<a class="insta-link" href="' + link + '" rel="noopener" target="_blank">';
+          html += '<div class="card border border-0 shadow img-mobile-custon" style="width: 15%;">';
+          html += '<a class="card-link" href="' + link + '" rel="noopener" target="_blank">';
           html += '<img src="' + image_video + '" loading="lazy" alt="' + caption + '" class="img-fluid"/>';
           html += '</a>';
           html += '</div>';
         } else {
-          html += '<div class="col-4 float-start py-2">';
-          html += '<a class="insta-link" href="' + link + '" rel="noopener" target="_blank">';
+          html += '<div class="card border border-0 shadow img-mobile-custon" style="width: 15%;">';
+          html += '<a class="card-link" href="' + link + '" rel="noopener" target="_blank">';
           html += '<img src="' + image + '" loading="lazy" alt="' + caption + '" class="img-fluid"/>';
           html += '</a>';
           html += '</div>';
@@ -81,44 +81,7 @@ window.onscroll = function () {
   }
 
   prevScrollpos = currentScrollPos;
-}; // /**paginate card grid*/
-// var cards = document.querySelectorAll('.card');
-// var currentPage = 0;
-// var cardsPerPage = 3;
-// var totalPages = Math.ceil(cards.length / cardsPerPage);
-// var pagination = document.querySelector('.pagination');
-// var paginationDots = '';
-// for (var i = 0; i < totalPages; i++) {
-//     paginationDots += '<span class="pagination-dot"></span>';
-// }
-// pagination.innerHTML = paginationDots;
-// pagination.querySelector('.pagination-dot').classList.add('active');
-// var paginationDots = document.querySelectorAll('.pagination-dot');
-// paginationDots.forEach(function(dot, index) {
-//     dot.addEventListener('click', function() {
-//         paginationDots.forEach(function(dot) {
-//             dot.classList.remove('active');
-//         });
-//         this.classList.add('active');
-//         currentPage = index;
-//         showPage(currentPage);
-//     });
-// }
-// );
-// function showPage(page) {
-//     var cards = document.querySelectorAll('.card');
-//     var cardsPerPage = 3;
-//     var firstCard = page * cardsPerPage;
-//     var lastCard = firstCard + cardsPerPage;
-//     cards.forEach(function(card) {
-//         card.classList.add('d-none');
-//     });
-//     for (var i = firstCard; i < lastCard; i++) {
-//         cards[i].classList.remove('d-none');
-//     }
-// }
-// showPage(currentPage);
-// /**/
+};
 
 /***/ }),
 

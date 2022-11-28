@@ -243,6 +243,18 @@
   transform: translateX(10px);
 }
 
+@media (max-width: 789px) {
+  .mobile-version-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .img-mobile-custon {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
 .custom-bg-header {
   background-color: transparent;
 }
