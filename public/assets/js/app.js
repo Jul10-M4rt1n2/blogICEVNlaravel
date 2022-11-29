@@ -8,11 +8,11 @@
 /***/ (() => {
 
 $(document).ready(function () {
-  var token = 'IGQVJVbU9NLTBiVzZA6QjNWSVkyTzlkdWdLZADROcG9CSndwOVQ5a3NsOTZATQkk5WmVmdFZAVZAV9ncXYxZAm1SZAnBhbjd1UjRxQTlsZAm1hTDVPQ2JKVXdYWWM2NmRzRWFUZAmFyTDBOY3BnYnhvOW1DWnpTbwZDZD';
+  var token = 'IGQVJWWkFuQlBhU3AzaldSTU9IdTNNV2xNUDRUYW1rX2doMXZANZAWxmVmttd1FJdWFkQlFDSThtMC1wTi0xT19HREhBN3NLQlJzemNJY01xcDh5bXZAyaU1wbkpHeXE3cmFsUzlFa1N5VGVxcVNpTk9fRAZDZD';
   var fields = 'id,media_type,media_url,thumbnail_url,timestamp,permalink,caption';
-  var limit = 9;
+  var limit = 12;
   $.ajax({
-    url: 'https://graph.instagram.com/me/media?fields=' + fields + '&access_token=' + token,
+    url: 'https://graph.instagram.com/me/media?fields=' + fields + '&access_token=' + token + '&limit=' + limit,
     type: 'GET',
     success: function success(response) {
       for (var x in response.data) {

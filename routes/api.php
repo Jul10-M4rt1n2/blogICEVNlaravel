@@ -19,3 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 //rota de mideas
 Route::get('/medias', 'App\Http\Controllers\API\InstagramController@index')->name('site.mideas');
+//rota watch detalhe do video
+Route::get('/watch/{id}', 'App\Http\Controllers\API\InstagramController@watch')->name('site.watch');

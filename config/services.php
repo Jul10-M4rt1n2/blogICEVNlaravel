@@ -31,4 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    //pegando as credenciais do .env da API do google
+    'youtube' => [
+        'api_key' => env('API_KEY'),
+        'search_endpoint' => env('SEARCH_ENDPOINT'),
+    ]
+
 ];
