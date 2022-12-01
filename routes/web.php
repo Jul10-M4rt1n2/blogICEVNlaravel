@@ -2,13 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\AuthController;
-use App\Http\Controllers\painel\BookController;
+use App\Http\Controllers\Painel\BookController;
 use App\Http\Controllers\Painel\HomeController;
 use App\Http\Controllers\Painel\PainelController;
-use App\Http\Controllers\painel\TimelineController;
-use App\Http\Controllers\site\BookSiteController;
+use App\Http\Controllers\Painel\TimelineController;
+use App\Http\Controllers\Site\BookSiteController;
 use App\Http\Controllers\Site\HomeSiteController;
-use App\Http\Controllers\site\TimelineSiteController;
+use App\Http\Controllers\Site\TimelineSiteController;
 
 /*
 |--------------------------------------------------------------------------

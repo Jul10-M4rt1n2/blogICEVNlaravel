@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\painel;
+namespace App\Http\Controllers\Painel;
 
 use App\Http\Controllers\Controller;
 use App\Services\Contracts\TimelineServiceInterface;
