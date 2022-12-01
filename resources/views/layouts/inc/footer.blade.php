@@ -20,21 +20,21 @@
         <div class="col-md-3">
             <h3 class="custom-sub-title custom-title-footer">Contato</h3>
             <ul>
-                <li><a href="#" class="custom-link"><i class="fa-brands fa-square-whatsapp"></i> (11) 99999-9999</a></li>
-                <li><a href="#" class="custom-link"><i class="fa-solid fa-phone"></i> (11) 99999-9999</a></li>
-                <li><a href="#" class="custom-link"><i class="fa-solid fa-mobile-retro"></i> (11) 99999-9999</a></li>
-                <li><a href="#" class="custom-link"><i class="fa-solid fa-envelope"></i> teste@teste.com.br</a></li>
+                <li><a href="{{ url('https://web.whatsapp.com/send?phone=5599111112222') }}" class="custom-link" target="_blank"><i class="fa-brands fa-square-whatsapp"></i> (11) 99999-9999</a></li>
+                {{-- <li><a href="#" class="custom-link"><i class="fa-solid fa-phone"></i> (11) 99999-9999</a></li> --}}
+                {{-- <li><a href="#" class="custom-link"><i class="fa-solid fa-mobile-retro"></i> (11) 99999-9999</a></li> --}}
+                <li><a href="mailto: abc@example.com" class="custom-link"><i class="fa-solid fa-envelope"></i> teste@teste.com.br</a></li>
             </ul>
         </div>
         <div class="col-md-3">
             <h3 class="custom-sub-title custom-title-footer">Redes sociais</h3>
             <ul>
-                <li><a href="#" class="custom-link"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-                <li><a href="#" class="custom-link"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-                <li><a href="#" class="custom-link"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
-                <li><a href="#" class="custom-link"><i class="fa-brands fa-youtube"></i> Youtube</a></li>
-                <li><a href="#" class="custom-link"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
-                <li><a href="#" class="custom-link"><i class="fa-brands fa-pinterest"></i> Pinterest</a></li>
+                <li><a href="{{ url('https://www.facebook.com/IgrejavidaNovacba') }}" class="custom-link" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                <li><a href="{{ url('https://www.instagram.com/icevidanovacuiaba/') }}" class="custom-link" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                {{-- <li><a href="#" class="custom-link" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a></li> --}}
+                <li><a href="{{ url('https://www.youtube.com/@ICEVidaNovacuiaba') }}" class="custom-link" target="_blank"><i class="fa-brands fa-youtube"></i> Youtube</a></li>
+                {{-- <li><a href="#" class="custom-link" target="_blank"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li> --}}
+                {{-- <li><a href="#" class="custom-link" target="_blank"><i class="fa-brands fa-pinterest"></i> Pinterest</a></li> --}}
             </ul>
         </div>
         <hr class="text-white">
