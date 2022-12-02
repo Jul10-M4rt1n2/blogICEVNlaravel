@@ -7,8 +7,10 @@ use App\Repositories\BookRepository;
 use App\Repositories\Contracts\BaseRepositoryInterface;
 use App\Repositories\Contracts\BookRepositoryInterface;
 use App\Repositories\Contracts\HomeRepositoryInterface;
+use App\Repositories\Contracts\StudiesRepositoryInterface;
 use App\Repositories\Contracts\TimelineRepositoryInterface;
 use App\Repositories\HomeRepository;
+use App\Repositories\StudiesRepository;
 use App\Repositories\TimelineRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,6 +27,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(HomeRepositoryInterface::class, HomeRepository::class);
         $this->app->bind(BookRepositoryInterface::class, BookRepository::class);
         $this->app->bind(TimelineRepositoryInterface::class, TimelineRepository::class);
+        $this->app->bind(StudiesRepositoryInterface::class, StudiesRepository::class);
     }
 
     /**

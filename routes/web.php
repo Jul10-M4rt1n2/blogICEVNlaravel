@@ -5,9 +5,11 @@ use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\Painel\BookController;
 use App\Http\Controllers\Painel\HomeController;
 use App\Http\Controllers\Painel\PainelController;
+use App\Http\Controllers\Painel\StudiesController;
 use App\Http\Controllers\Painel\TimelineController;
 use App\Http\Controllers\Site\BookSiteController;
 use App\Http\Controllers\Site\HomeSiteController;
+use App\Http\Controllers\Site\StudiesSiteController;
 use App\Http\Controllers\Site\TimelineSiteController;
 
 /*
@@ -32,6 +34,9 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/livros-e-revistas/{id}', [BookSiteController::class, 'show'])->name('site.show');
     //Rotas da pagina de cronograma timeline
     Route::get('/cronograma', [TimelineSiteController::class, 'index'])->name('site.timeline');
+    //Rotas da pagina livros e revistas
+    Route::get('/estudos-biblicos', [StudiesSiteController::class, 'index'])->name('site.studies');
+    Route::get('/estudos-biblicos/{id}', [StudiesSiteController::class, 'show'])->name('site.show');
 });
 
 //rota de login
@@ -63,5 +68,12 @@ Route::group(['namespace' => 'Dashboard', 'prefix' => 'sistema'],function ()
         Route::get('/cronograma/editar/{id}', [TimelineController::class, 'edit'])->name('painel-timeline-edit');
         Route::put('/cronograma/update/{id}', [TimelineController::class, 'update'])->name('painel-timeline-update');
         Route::delete('/cronograma/destroy/{id}', [TimelineController::class, 'destroy'])->name('painel-timeline-destroy');
+        //Rotas da pagina livros e revistas
+        Route::get('/estudos-biblicos', [StudiesController::class, 'index'])->name('painel.studies');
+        Route::get('/estudos-biblicos/cadastrar', [StudiesController::class, 'create'])->name('painel-studies-create');
+        Route::post('/estudos-biblicos/store', [StudiesController::class, 'store'])->name('painel-studies-store');
+        Route::get('/estudos-biblicos/editar/{id}', [StudiesController::class, 'edit'])->name('painel-studies-edit');
+        Route::put('/estudos-biblicos/update/{id}', [StudiesController::class, 'update'])->name('painel-studies-update');
+        Route::delete('/estudos-biblicos/destroy/{id}', [StudiesController::class, 'destroy'])->name('painel-studies-destroy');
     }
 );

@@ -11,7 +11,7 @@
             <ul>
                 <li><a href="#" class="custom-link"><i class="fa-solid fa-house"></i> Home</a></li>
                 <li><a href="#" class="custom-link"><i class="fa-solid fa-volleyball"></i> Encontro de jovens</a></li>
-                <li><a href="#" class="custom-link"><i class="fa-solid fa-graduation-cap"></i> Estudos biblícos</a></li>
+                <li><a href="{{ route('site.studies') }}" class="custom-link"><i class="fa-solid fa-graduation-cap"></i> Estudos biblícos</a></li>
                 <li><a href="#" class="custom-link"><i class="fa-solid fa-heart-pulse"></i> Pedidos de oracao</a></li>
                 <li><a href="#" class="custom-link"><i class="fa-solid fa-money-bill"></i> Dizimos e ofertas</a></li>
                 <li><a href="#" class="custom-link"><i class="fa-solid fa-address-book"></i> Contato</a></li>

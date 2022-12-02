@@ -58,7 +58,7 @@
                 <a class="nav-link text-white" href="#"><i class="fa-solid fa-photo-film"></i> Medeas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fa-solid fa-graduation-cap"></i> Estudos
+                <a class="nav-link text-white" href="{{ route('painel.studies') }}"><i class="fa-solid fa-graduation-cap"></i> Estudos
                     bíblicos</a>
             </li>
             <li class="nav-item">

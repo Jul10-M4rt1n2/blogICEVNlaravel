@@ -23,7 +23,7 @@
                             Mideas</a>
                     </li>
                     <li class="nav-item custom-card-img-effect">
-                        <a class="nav-link custom-text-nav" href="#"><i class="fa-solid fa-graduation-cap"></i>
+                        <a class="nav-link custom-text-nav" href="{{ route('site.studies') }}"><i class="fa-solid fa-graduation-cap"></i>
                             Estudos biblícos</a>
                     </li>
                     <li class="nav-item custom-card-img-effect">
