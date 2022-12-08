@@ -27,7 +27,7 @@
                             Estudos biblícos</a>
                     </li>
                     <li class="nav-item custom-card-img-effect">
-                        <a class="nav-link custom-text-nav" href="#"><i
+                        <a class="nav-link custom-text-nav" href="{{ route('site.whoweare') }}"><i
                                 class="fa-solid fa-circle-exclamation"></i> Quem somos</a>
                     </li>
                     <li class="nav-item custom-card-img-effect">

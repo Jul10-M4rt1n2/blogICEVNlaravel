@@ -37,6 +37,10 @@ Route::group(['namespace' => 'Site'], function () {
     //Rotas da pagina livros e revistas
     Route::get('/estudos-biblicos', [StudiesSiteController::class, 'index'])->name('site.studies');
     Route::get('/estudos-biblicos/{id}', [StudiesSiteController::class, 'show'])->name('site.show');
+    //rota chamando a view quem somos
+    Route::get('/quem-somos', function () {
+        return view('site.whoweare.index');
+    })->name('site.whoweare');
 });
 
 //rota de login
