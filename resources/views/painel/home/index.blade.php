@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container py-5">
+    <div class="container py-5" style="margin-left: 25%;">
         <div class="row">
             <div class="col-12 colxl-12 col-lg-12 col-md-12 col-sm-12">
                 <h1>Dashboard - Home page</h1>
@@ -43,7 +43,7 @@
                                 <tr>
                                     <td scope="row">{{ $item->id }}</td>
                                     <td>{{ $item->section2_title }}</td>
-                                    <td>{{ $item->section2_description }}</td>
+                                    <td>{{ substr($item->section2_description,0,150).'...' }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('painel-home-edit', $item->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     </td>

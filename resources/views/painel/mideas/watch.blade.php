@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <section class="bg-black" style="margin-top: 6%;">
+    <section class="bg-black" style="margin-top: 6%; margin-left: 25%;">
         <div class="container my-5 py-2"></div>
         <div class="title text-center m-auto">
             <h1 class="h4 p-5 custom-title-italic custom-transition">Estamos no YouTube</h1>

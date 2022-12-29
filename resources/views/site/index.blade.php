@@ -7,11 +7,9 @@
 @section('content')
     <section class="body">
         <div class="img-banner">
-            @if (!empty($registros) && count($registros) > 0)
-                @foreach ($registros as $iten)
-                    <img src="{{ asset($iten->image) }}" alt="banner-destaque" class="img w-100  custom-gradient"
+            @if (isset($registro))
+                    <img src="{{ asset($registro->image) }}" alt="banner-destaque" class="img w-100  custom-gradient"
                         style="height: 45rem">
-                @endforeach
             @else
                 <img src="{{ asset('assets/image/banner-livros-revista.jpg') }}" alt="banner-destaque"
                     class="img w-100  custom-gradient" style="height: 45rem">
@@ -21,11 +19,9 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col-12 col-md-8 d-block text-center m-auto">
-                        @if (!empty($registros) && count($registros) > 0)
-                            @foreach ($registros as $iten)
-                                <p class="h4 p-5 custom-title-italic custom-transition">{{ $iten->section2_title }}</p>
-                                <p class="h5 custom-sub-title custom-transition">{{ $iten->section2_description }}</p>
-                            @endforeach
+                        @if (isset($registro))
+                                <p class="h4 p-5 custom-title-italic custom-transition">{{ $registro->section2_title }}</p>
+                                <p class="h5 custom-sub-title custom-transition">{{ $registro->section2_description }}</p>
                         @else
                             <p class="h4 p-5 custom-title-italic custom-transition">Voce pode me dar 5 minutos de sua
                                 atencao?
@@ -38,11 +34,9 @@
                         @endif
                     </div>
                     <div class="col-12 col-md-4 d-block">
-                        @if (!empty($registros) && count($registros) > 0)
-                            @foreach ($registros as $iten)
-                                <img src="{{ asset($iten->image2) }}" alt="banner-destaque"
+                        @if (isset($registro))
+                                <img src="{{ asset($registro->image2) }}" alt="banner-destaque"
                                     class="img w-100  custom-gradient" style="height: 45rem">
-                            @endforeach
                         @else
                             <img src="{{ asset('assets/image/banner-oracao.jpg') }}" alt=""
                                 class="img-text w-100 custom-card-img-effect">
@@ -55,11 +49,9 @@
             <div class="container text-center">
                 <div class="col-12">
                     <div class="row">
-                        @if (!empty($registros) && count($registros) > 0)
-                            @foreach ($registros as $iten)
-                                <p class="h4 custom-title-italic-2 custom-transition">{{ $iten->section3_title }}</p>
-                                <p class="h5 custom-sub-title-2 custom-transition">{{ $iten->section3_sub_title }}</p>
-                            @endforeach
+                        @if (isset($registro))
+                                <p class="h4 custom-title-italic-2 custom-transition">{{ $registro->section3_title }}</p>
+                                <p class="h5 custom-sub-title-2 custom-transition">{{ $registro->section3_sub_title }}</p>
                         @else
                             <p class="h4 custom-title-italic-2 custom-transition">Encontros semanais</p>
                             <p class="h5 custom-sub-title-2 custom-transition">voce é nosso convidade mais que especial</p>
@@ -69,13 +61,11 @@
                         <div class="col-sm-4">
                             <div class="card custom-bord-card">
                                 <div class="card-body custom-bg-section" style="height: 380px; overflow: hidden;">
-                                    @if (!empty($registros) && count($registros) > 0)
-                                        @foreach ($registros as $iten)
+                                    @if (isset($registro))
                                             <h5 class="card-title custom-title-italic-2 custom-transition">
-                                                {{ $iten->section3_title_card1 }}</h5>
+                                                {{ $registro->section3_title_card1 }}</h5>
                                             <p class="card-text custom-sub-title-2 custom-transition">
-                                                {{ $iten->section3_description_card1 }}</p>
-                                        @endforeach
+                                                {{ substr($registro->section3_description_card1,0,300).'...' }}</p>
                                     @else
                                         <h5 class="card-title custom-title-italic-2 custom-transition">Culto da Família</h5>
                                         <p class="card-text custom-sub-title-2 custom-transition">Todo domingo das 19 horas
@@ -92,13 +82,11 @@
                         <div class="col-sm-4">
                             <div class="card custom-bord-card">
                                 <div class="card-body custom-bg-section" style="height: 380px; overflow: hidden;">
-                                    @if (!empty($registros) && count($registros) > 0)
-                                        @foreach ($registros as $iten)
+                                    @if (isset($registro))
                                             <h5 class="card-title custom-title-italic-2 custom-transition">
-                                                {{ $iten->section3_title_card2 }}</h5>
+                                                {{ $registro->section3_title_card2 }}</h5>
                                             <p class="card-text custom-sub-title-2 custom-transition">
-                                                {{ $iten->section3_description_card2 }}</p>
-                                        @endforeach
+                                                {{ substr($registro->section3_description_card2,0,300).'...' }}</p>
                                     @else
                                         <h5 class="card-title custom-title-italic-2 custom-transition">Entudos bíblcos de
                                             quarta-feira (EBQ)</h5>
@@ -115,13 +103,11 @@
                         <div class="col-sm-4">
                             <div class="card custom-bord-card">
                                 <div class="card-body custom-bg-section" style="height: 380px; overflow: hidden;">
-                                    @if (!empty($registros) && count($registros) > 0)
-                                        @foreach ($registros as $iten)
+                                    @if (isset($registro))
                                             <h5 class="card-title custom-title-italic-2 custom-transition">
-                                                {{ $iten->section3_title_card3 }}</h5>
+                                                {{ $registro->section3_title_card3 }}</h5>
                                             <p class="card-text custom-sub-title-2 custom-transition">
-                                                {{ $iten->section3_description_card3 }}</p>
-                                        @endforeach
+                                                {{ substr($registro->section3_description_card3,0,300).'...' }}</p>
                                     @else
                                         <h5 class="card-title custom-title-italic-2 custom-transition">Encontro de oracao
                                         </h5>
@@ -147,13 +133,11 @@
             <div class="container text-center">
                 <div class="card border-0 p-5 custom-bg-section-2" id="section-worne">
                     <div class="card-body">
-                        @if (!empty($registros) && count($registros) > 0)
-                            @foreach ($registros as $iten)
+                        @if (isset($registro))
                                 <h5 class="card-title custom-title-italic-2 custom-transition">
-                                    {{ $iten->section4_title }}</h5>
+                                    {{ $registro->section4_title }}</h5>
                                 <p class="card-text custom-sub-title-2 custom-transition">
-                                    {{ $iten->section4_description }}</p>
-                            @endforeach
+                                    {{ substr($registro->section4_description,0,400).'...' }}</p>
                         @else
                             <h5 class="card-title custom-title-italic-2 custom-transition">Quer saber o que ti espera?</h5>
                             <p class="card-text custom-sub-title-2 custom-transition">Temos um amplo salao com capacidade

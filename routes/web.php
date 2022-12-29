@@ -7,10 +7,12 @@ use App\Http\Controllers\Painel\HomeController;
 use App\Http\Controllers\Painel\PainelController;
 use App\Http\Controllers\Painel\StudiesController;
 use App\Http\Controllers\Painel\TimelineController;
+use App\Http\Controllers\Painel\WhoweareController;
 use App\Http\Controllers\Site\BookSiteController;
 use App\Http\Controllers\Site\HomeSiteController;
 use App\Http\Controllers\Site\StudiesSiteController;
 use App\Http\Controllers\Site\TimelineSiteController;
+use App\Http\Controllers\Site\whoweareSiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,9 +40,7 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/estudos-biblicos', [StudiesSiteController::class, 'index'])->name('site.studies');
     Route::get('/estudos-biblicos/{id}', [StudiesSiteController::class, 'show'])->name('site.show');
     //rota chamando a view quem somos
-    Route::get('/quem-somos', function () {
-        return view('site.whoweare.index');
-    })->name('site.whoweare');
+    Route::get('/quem-somos', [whoweareSiteController::class, 'index'])->name('site.whoweare');
 });
 
 //rota de login
@@ -79,5 +79,12 @@ Route::group(['namespace' => 'Dashboard', 'prefix' => 'sistema'],function ()
         Route::get('/estudos-biblicos/editar/{id}', [StudiesController::class, 'edit'])->name('painel-studies-edit');
         Route::put('/estudos-biblicos/update/{id}', [StudiesController::class, 'update'])->name('painel-studies-update');
         Route::delete('/estudos-biblicos/destroy/{id}', [StudiesController::class, 'destroy'])->name('painel-studies-destroy');
+        //Rotas da pagina quem somos
+        Route::get('/quem-somos', [WhoweareController::class, 'index'])->name('painel.whoweare');
+        Route::get('/quem-somos/cadastrar', [whoweareController::class, 'create'])->name('painel-whoweare-create');
+        Route::post('/quem-somos/store', [whoweareController::class, 'store'])->name('painel-whoweare-store');
+        Route::get('/quem-somos/editar/{id}', [whoweareController::class, 'edit'])->name('painel-whoweare-edit');
+        Route::put('/quem-somos/update/{id}', [whoweareController::class, 'update'])->name('painel-whoweare-update');
+        Route::delete('/quem-somos/destroy/{id}', [whoweareController::class, 'destroy'])->name('painel-whoweare-destroy');
     }
 );

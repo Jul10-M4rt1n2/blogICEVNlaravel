@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('title')
-    Pagina referente a pagina de programacoes do site
+    Pagina referente a pagina Quem Somos
 @endsection
 
 @section('content')
-    <div class="container py-5" style="margin-left: 25%;">
+    <div class="container py-5">
         <div class="row">
             <div class="col-12 colxl-12 col-lg-12 col-md-12 col-sm-12">
-                <h1>Dashboard - Programacoes</h1>
+                <h1>Dashboard - Pagina Quem Somos</h1>
                 <!--retornando os erros-->
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -26,7 +26,7 @@
                             <form action="#" method="POST" class="form form-inline">
                                 @csrf
                                 <input type="text" name="filter" placeholder="Pesquisar" class="form-control my-2" value="{{ $filters['filter'] ?? '' }}">
-                                <a href="{{ route('painel-timeline-create') }}" class="btn btn-secondary" role="button"><i class="fas fa-plus-circle"></i>Adicionar</a>
+                                <a href="{{ route('painel-whoweare-create') }}" class="btn btn-secondary" role="button"><i class="fas fa-plus-circle"></i>Adicionar</a>
                                 <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i>Pesquisar</button>
                                 <button type="reset" class="btn btn-warning"><i class="fas fa-eraser">Limpar pesquisa</i></button>
                             </form>
@@ -42,12 +42,11 @@
                         <thead class="table-dark">
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Inicio</th>
-                                <th scope="col">Término</th>
-                                <th scope="col">Data</th>
-                                <th scope="col">Dia</th>
-                                <th scope="col">Descricao</th>
-                                <th scope="col" colspan="4" class="text-center" width=5%>Acões</th>
+                                <th scope="col">Título</th>
+                                <th scope="col">Subtítulo</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Icone</th>
+                                <th scope="col" colspan="6" class="text-center" width=5%>Acões</th>
                             </tr>
                         </thead>
                         <!--verificando se a tabela esta vazia e exibindo a mensagem Nenhum registro encontrado-->
@@ -55,16 +54,15 @@
                             @foreach ($data as $item)
                                 <tr>
                                     <td scope="row">{{ $item->id }}</td>
-                                    <td>{{ $item->start_time }}</td>
-                                    <td>{{ $item->end_time}}</td>
-                                    <td>{{ $item->date }}</td>
-                                    <td>{{ $item->day }}</td>
-                                    <td>{{ $item->description }}</td>
+                                    <td>{{ $item->title }}</td>
+                                    <td>{{ $item->subtitle }}</td>
+                                    <td>{{ substr($item->description, 0,150).'...' }}</td>
+                                    <td>{{ $item->icon }}</td>
                                     <td class="text-center">
-                                        <a href="{{ route('painel-timeline-edit', $item->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                                        <a href="{{ route('painel-whoweare-edit', $item->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     </td>
                                     <td class="text-center">
-                                        <form action="{{ route('painel-timeline-destroy', $item->id) }}" method="POST">
+                                        <form action="{{ route('painel-whoweare-destroy', $item->id) }}" method="POST">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
@@ -74,7 +72,7 @@
                             @endforeach
                         @else
                             <tr>
-                                <td colspan="4" class="text-center">
+                                <td colspan="6" class="text-center">
                                     <div class="alert alert-warning mb-0" role="alert">
                                         Nenhum registro encontrado
                                     </div>

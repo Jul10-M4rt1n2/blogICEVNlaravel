@@ -9,9 +9,11 @@ use App\Repositories\Contracts\BookRepositoryInterface;
 use App\Repositories\Contracts\HomeRepositoryInterface;
 use App\Repositories\Contracts\StudiesRepositoryInterface;
 use App\Repositories\Contracts\TimelineRepositoryInterface;
+use App\Repositories\Contracts\WhoweareRepositoryInterface;
 use App\Repositories\HomeRepository;
 use App\Repositories\StudiesRepository;
 use App\Repositories\TimelineRepository;
+use App\Repositories\WhoweareRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -28,6 +30,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(BookRepositoryInterface::class, BookRepository::class);
         $this->app->bind(TimelineRepositoryInterface::class, TimelineRepository::class);
         $this->app->bind(StudiesRepositoryInterface::class, StudiesRepository::class);
+        $this->app->bind(WhoweareRepositoryInterface::class, WhoweareRepository::class);
     }
 
     /**

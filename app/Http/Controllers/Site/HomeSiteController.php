@@ -21,7 +21,10 @@ class HomeSiteController extends Controller
         //pegando somente o ultimo registro adicionado
         $registro = $registros->last();
         //retornando a view com os registros e as imagens
-        return view('site.index', compact('registros'));
+        return view('site.index', [
+            'registros' => $registros,
+            'registro' => $registro,
+        ]);
     }
 
     public function detalhesPost()
@@ -32,7 +35,9 @@ class HomeSiteController extends Controller
         $post = $post->last();
         
         //retorna a view com o post
-        return view('site.detalhesPost', compact('post'));
+        return view('site.detalhesPost', [
+            'post' => $post,
+        ]);
     }
 
     public function detalhesPost2()
@@ -43,7 +48,9 @@ class HomeSiteController extends Controller
         $post = $post->last();
         
         //retorna a view com o post
-        return view('site.detalhesPost2', compact('post'));
+        return view('site.detalhesPost2', [
+            'post' => $post,
+        ]);
     }
 
     public function detalhesPost3()
@@ -54,7 +61,9 @@ class HomeSiteController extends Controller
         $post = $post->last();
         
         //retorna a view com o post
-        return view('site.detalhesPost3', compact('post'));
+        return view('site.detalhesPost3', [
+            'post' => $post,
+        ]);
     }
 
     public function detalhesPost4()
@@ -65,6 +74,8 @@ class HomeSiteController extends Controller
         $post = $post->last();
         
         //retorna a view com o post
-        return view('site.detalhesPost4', compact('post'));
+        return view('site.detalhesPost4', [
+            'post' => $post,
+        ]);
     }
 }

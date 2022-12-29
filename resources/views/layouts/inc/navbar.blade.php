@@ -62,7 +62,7 @@
                     bíblicos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fa-solid fa-circle-exclamation"></i> Quem
+                <a class="nav-link text-white" href="{{ route('painel.whoweare') }}"><i class="fa-solid fa-circle-exclamation"></i> Quem
                     Somos</a>
             </li>
             <li class="nav-item">

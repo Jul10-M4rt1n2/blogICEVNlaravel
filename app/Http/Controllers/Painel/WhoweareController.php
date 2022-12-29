@@ -3,27 +3,27 @@
 namespace App\Http\Controllers\Painel;
 
 use App\Http\Controllers\Controller;
+use App\Services\Contracts\WhoweareServiceInterface;
 use Illuminate\Http\Request;
-use App\Services\Contracts\HomeServiceInterface;
+use Termwind\Components\Dd;
 
-class HomeController extends Controller
+class WhoweareController extends Controller
 {
     //variavel que contem a instancia do servico
     protected $model;
 
     //construtor da classe
-    public function __construct(HomeServiceInterface $model)
+    public function __construct(WhoweareServiceInterface $model)
     {
         //atribui a instancia do servico a variavel da classe
-        $this->model = $model;   
+        $this->model = $model;
     }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    //metodo para exibir a pagina do formulario de cadastro
     public function index(Request $request)
     {
         //a variavel $paginate recebe o valor da variavel paginate do request
@@ -33,11 +33,10 @@ class HomeController extends Controller
         //a variavel $orderByOrder recebe o valor da variavel orderByOrder do request
         $orderByOrder = ($request->input('orderByOrder')) ? $request->input('orderByOrder') : 'asc';
 
-        //chama o metodo list do servico em array
         $data = $this->model->all($request, $orderByField, $orderByOrder, $paginate);
 
-        //retorna a view com os dados
-        return view('painel.home.index', [
+        //retorna a view index com os dados
+        return view('painel.whoweare.index',[
             'data' => $data,
             'paginate' => $paginate,
             'orderByField' => $orderByField,
@@ -53,7 +52,7 @@ class HomeController extends Controller
     public function create()
     {
         //retorna a view
-        return view('painel.home.form', [
+        return view('painel.whoweare.form', [
             //a variavel data recebe null
             'data' => null
         ]);
@@ -67,31 +66,19 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //tratando erros ao cadastrar
+        // //tratando os erros
         try{
-            if ($request->hasFile('featured_image')) {
-
-                $imageName = time() . '.' . $request->featured_image->extension();
-
-                $request->featured_image->move(public_path('storage/images'), $imageName);
-                $request->merge(array('image' => "storage/images/" . $imageName));
-            }
-            if ($request->hasFile('section2_image')) {
-
-                $imageName = time() . '.' . $request->section2_image->extension();
-
-                $request->section2_image->move(public_path('storage/images'), $imageName);
-                $request->merge(array('image2' => "storage/images/" . $imageName));
-            }
-            //chama o metodo create do servico
+            //retorna a view com os dados e a mensagem de sucesso
             $this->model->create($request->all());
-            //retorna a view com a mensagem de sucesso
-            return redirect()->route('painel-home')->with('success', 'Registro cadastrado com sucesso!');
+            $message = array('message' => 'Registro cadastrado com sucesso!', 'alert-type' => 'success');
+           
         }
         catch(\Exception $e){
-            //retorna a view com a mensagem de erro
-            return redirect()->route('painel-home')->with('error', 'Erro ao cadastrar o registro!');
+            //retorna a mensagem de erro
+
+            $message = array('message' => 'Registro cadastrado com sucesso!', 'alert-type' => 'error');
         }
+        return redirect()->route('painel.whoweare')->with($message);
     }
 
     /**
@@ -116,16 +103,14 @@ class HomeController extends Controller
         //chama o metodo find do servico
         $data = $this->model->find($id);
         //trata erros ao editar
-        try{
+       try {
             //retorna a view com os dados
-            return view('painel.home.form', [
+            return view('painel.whoweare.form', [
                 'data' => $data
             ]);
-        }
-        catch(\Exception $e){
-            dd('exit');
-            //retorna a view com a mensagem de erro
-            return redirect()->route('painel-home')->with('error', 'Erro ao editar o registro!');
+        } catch (\Exception $e) {
+            //retorna a mensagem de erro
+            return redirect()->route('painel.whoweare')->with('error', 'Erro ao editar o Estudo!');
         }
     }
 
@@ -139,15 +124,14 @@ class HomeController extends Controller
     public function update(Request $request, $id)
     {
         //tratando erro ao tentar salvar a edicao
-        try{
+        try {
             //chama o metodo update do servico
             $this->model->update($request->all(), $id);
-            //retorna a view com a mensagem de sucesso
-            return redirect()->route('painel-home')->with('success', 'Registro editado com sucesso!');
-        }
-        catch(\Exception $e){
-            //retorna a view com a mensagem de erro
-            return redirect()->route('painel-home')->with('error', 'Erro ao editar o registro!');
+            //retorna a mensagem de sucesso
+            return redirect()->route('whoweare.index')->with('success', 'Estudo editado com sucesso!');
+        } catch (\Exception $e) {
+            //retorna a mensagem de erro
+            return redirect()->route('painel.whoweare')->with('error', 'Erro ao editar o Estudo!');
         }
     }
 
@@ -159,16 +143,15 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        //traatando erro ao tentar excluir
-        try{
+        //trata erro ao tentar excluir
+        try {
             //chama o metodo delete do servico
             $this->model->destroy($id);
-            //retorna a view com a mensagem de sucesso
-            return redirect()->route('painel-home')->with('success', 'Registro excluido com sucesso!');
-        }
-        catch(\Exception $e){
-            //retorna a view com a mensagem de erro
-            return redirect()->route('painel-home')->with('error', 'Erro ao excluir o registro!');
+            //retorna a mensagem de sucesso
+            return redirect()->route('whoweare.index')->with('success', 'Estudo excluido com sucesso!');
+        } catch (\Exception $e) {
+            //retorna a mensagem de erro
+            return redirect()->route('painel.whoweare')->with('error', 'Erro ao excluir o Estudo!');
         }
     }
 }
