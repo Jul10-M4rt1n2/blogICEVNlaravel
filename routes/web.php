@@ -33,12 +33,12 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('detalhes-do-post-4', [HomeSiteController::class, 'detalhesPost4'])->name('site.detalhesPost4');
     //Rotas da pagina livros e revistas
     Route::get('/livros-e-revistas', [BookSiteController::class, 'index'])->name('site.books');
-    Route::get('/livros-e-revistas/{id}', [BookSiteController::class, 'show'])->name('site.show');
+    Route::get('/livros-e-revistas/{id}', [BookSiteController::class, 'show'])->name('books.show');
     //Rotas da pagina de cronograma timeline
     Route::get('/cronograma', [TimelineSiteController::class, 'index'])->name('site.timeline');
     //Rotas da pagina livros e revistas
     Route::get('/estudos-biblicos', [StudiesSiteController::class, 'index'])->name('site.studies');
-    Route::get('/estudos-biblicos/{id}', [StudiesSiteController::class, 'show'])->name('site.show');
+    Route::get('/estudos-biblicos/{id}', [StudiesSiteController::class, 'show'])->name('studies.show');
     //rota chamando a view quem somos
     Route::get('/quem-somos', [whoweareSiteController::class, 'index'])->name('site.whoweare');
 });

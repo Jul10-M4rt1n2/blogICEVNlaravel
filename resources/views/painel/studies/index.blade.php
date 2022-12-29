@@ -53,7 +53,7 @@
                                 <tr>
                                     <td scope="row">{{ $item->id }}</td>
                                     <td>{{ $item->title }}</td>
-                                    <td>{{ $item->summary }}</td>
+                                    <td>{{ substr($item->summary,0,150).'...' }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('painel-studies-edit', $item->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     </td>

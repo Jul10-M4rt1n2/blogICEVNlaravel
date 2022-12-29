@@ -97,7 +97,7 @@
                             <!--verificando se é livro ou revista conforme o select no cadastro-->
                             @if ($item->category == 'ebq')
                                 <div class="col-12 col-md-3 d-block">
-                                    <a href="{{ route('site.show', $item->id) }}" class="card-link">
+                                    <a href="{{ route('studies.show', $item->id) }}" class="card-link">
                                         <div class="card border border-0 shadow" style="width: 18rem;">
                                             <img src="{{ asset($item->image2) }}" class="card-img custom-card-img-effect"
                                                 alt="...">
@@ -133,7 +133,7 @@
                             <!--verificando se é livro ou revista conforme o select no cadastro-->
                             @if ($item->category == 'outros')
                                 <div class="col-12 col-md-3 d-block">
-                                    <a href="{{ route('site.show',  $item->id) }}" class="card-link">
+                                    <a href="{{ route('studies.show',  $item->id) }}" class="card-link">
                                         <div class="card border border-0 shadow" style="width: 18rem;">
                                             <img src="{{ asset($item->image2) }}" class="card-img custom-card-img-effect"
                                                 alt="...">

@@ -59,7 +59,7 @@
                                     <td>{{ $item->end_time}}</td>
                                     <td>{{ $item->date }}</td>
                                     <td>{{ $item->day }}</td>
-                                    <td>{{ $item->description }}</td>
+                                    <td>{{ substr($item->description,0,150).'...' }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('painel-timeline-edit', $item->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                     </td>

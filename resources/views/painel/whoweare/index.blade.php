@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container py-5">
+    <div class="container py-5" style="margin-left: 25%;">
         <div class="row">
             <div class="col-12 colxl-12 col-lg-12 col-md-12 col-sm-12">
                 <h1>Dashboard - Pagina Quem Somos</h1>

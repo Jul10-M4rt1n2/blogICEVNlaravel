@@ -77,7 +77,7 @@ class TimelineController extends Controller
         //se houver um erro
         catch(\Exception $e){
             //retorna a view index com a mensagem de erro
-            return redirect()->route('timeline.index')->with('error', 'Erro ao inserir o registro!');
+            return redirect()->route('painel.timeline')->with('error', 'Erro ao inserir o registro!');
         }
     }
 
@@ -113,7 +113,7 @@ class TimelineController extends Controller
         //se houver um erro
         catch(\Exception $e){
             //retorna a view index com a mensagem de erro
-            return redirect()->route('timeline.index')->with('error', 'Erro ao editar o registro!');
+            return redirect()->route('painel.timeline')->with('error', 'Erro ao editar o registro!');
         }
     }
 
@@ -137,7 +137,7 @@ class TimelineController extends Controller
         //se houver um erro
         catch(\Exception $e){
             //retorna a view index com a mensagem de erro
-            return redirect()->route('timeline.index')->with('error', 'Erro ao editar o registro!');
+            return redirect()->route('painel.timeline')->with('error', 'Erro ao editar o registro!');
         }
     }
 
@@ -154,12 +154,12 @@ class TimelineController extends Controller
             //chama o metodo delete do servico
             $this->model->destroy($id);
             //retorna a view index com a mensagem de sucesso
-            return redirect()->route('timeline.index')->with('success', 'Registro excluído com sucesso!');
+            return redirect()->route('painel.timeline')->with('success', 'Registro excluído com sucesso!');
         }
         //se houver um erro
         catch(\Exception $e){
             //retorna a view index com a mensagem de erro
-            return redirect()->route('timeline.index')->with('error', 'Erro ao excluir o registro!');
+            return redirect()->route('painel.timeline')->with('error', 'Erro ao excluir o registro!');
         }
     }
 }

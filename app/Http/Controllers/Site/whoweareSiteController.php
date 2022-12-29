@@ -24,5 +24,4 @@ class whoweareSiteController extends Controller
             'data' => $data
         ]);
     }
-
 }
