@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\Painel\BookController;
+use App\Http\Controllers\Painel\ContactController;
 use App\Http\Controllers\Painel\HomeController;
 use App\Http\Controllers\Painel\PainelController;
 use App\Http\Controllers\Painel\StudiesController;
@@ -41,6 +42,10 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/estudos-biblicos/{id}', [StudiesSiteController::class, 'show'])->name('studies.show');
     //rota chamando a view quem somos
     Route::get('/quem-somos', [whoweareSiteController::class, 'index'])->name('site.whoweare');
+    //rota chamando a view contact
+    Route::get('/contato', function () {
+        return view('site.contact.index');
+    })->name('site.contact');
 });
 
 //rota de login
@@ -49,8 +54,9 @@ Route::post('/auth', [AuthController::class, 'authenticate'])->name('authenticat
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //rotas do painel dashboard
-Route::group(['namespace' => 'Dashboard', 'prefix' => 'sistema'],function () 
-    {
+Route::group(
+    ['namespace' => 'Dashboard', 'prefix' => 'sistema'],
+    function () {
         Route::get('/painel', [PainelController::class, 'index'])->name('painel');
         Route::get('/home', [HomeController::class, 'index'])->name('painel-home');
         Route::get('/home/cadastrar', [HomeController::class, 'create'])->name('painel-home-create');
@@ -86,5 +92,9 @@ Route::group(['namespace' => 'Dashboard', 'prefix' => 'sistema'],function ()
         Route::get('/quem-somos/editar/{id}', [whoweareController::class, 'edit'])->name('painel-whoweare-edit');
         Route::put('/quem-somos/update/{id}', [whoweareController::class, 'update'])->name('painel-whoweare-update');
         Route::delete('/quem-somos/destroy/{id}', [whoweareController::class, 'destroy'])->name('painel-whoweare-destroy');
+        //Rotas da pagina contato
+        Route::get('/contato', [ContactController::class, 'index'])->name('painel.contact');
+        Route::post('/send-mail', [ContactController::class, 'store'])->name('painel-send-mail');
+        Route::get('/contato/enviar-lista-email', [ContactController::class, 'edit'])->name('painel-contact-edit');
     }
 );

@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Repositories\BaseRepository;
 use App\Repositories\BookRepository;
+use App\Repositories\ContactRepository;
 use App\Repositories\Contracts\BaseRepositoryInterface;
 use App\Repositories\Contracts\BookRepositoryInterface;
+use App\Repositories\Contracts\ContactRepositoryInterface;
 use App\Repositories\Contracts\HomeRepositoryInterface;
 use App\Repositories\Contracts\StudiesRepositoryInterface;
 use App\Repositories\Contracts\TimelineRepositoryInterface;
@@ -31,6 +33,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(TimelineRepositoryInterface::class, TimelineRepository::class);
         $this->app->bind(StudiesRepositoryInterface::class, StudiesRepository::class);
         $this->app->bind(WhoweareRepositoryInterface::class, WhoweareRepository::class);
+        $this->app->bind(ContactRepositoryInterface::class, ContactRepository::class);
     }
 
     /**

@@ -21,7 +21,7 @@ class BaseService implements BaseServiceInterface
         return $this->model->create($data);
     }
     //esta funcao recebe os dados do formulario e salva no banco
-    public function update($id, $data)
+    public function update($data, $id)
     {
         //retorna a variavel model com o metodo find e o metodo update
         return $this->model->find($id)->update($data);

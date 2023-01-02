@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Mada:wght@200;300;400;500;600;700;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 
 //reset da pgina
 * {
@@ -267,8 +268,44 @@
         justify-content: center;
         align-items: center;
     }
-    .img-mobile-custon{
+
+    .img-mobile-custon {
         width: 100% !important;
         height: 100% !important;
     }
+}
+
+.custom-input-form  input{
+    background-color: #fff;
+    color: #212529;
+    border: 1px solid #E4E7ED;
+    width: 100%;
+    padding: 5px 10px;
+
+    &:focus {
+        background-color: #fff;
+        color: #212529;
+        border: 1px solid #7B44FA;
+    }
+}
+
+.custom-input-form  textarea{
+    background-color: #fff;
+    color: #212529;
+    border: 1px solid #E4E7ED;
+    width: 100%;
+    padding: 5px 10px;
+
+    &:focus {
+        background-color: #fff;
+        color: #212529;
+        border: 1px solid #7B44FA;
+    }
+}
+
+.custon-title-form-contact{
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    font-weight: 600;
+    color: #212529;
 }

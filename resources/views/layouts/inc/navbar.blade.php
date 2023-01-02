@@ -66,7 +66,7 @@
                     Somos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fa-solid fa-address-book"></i> Contato</a>
+                <a class="nav-link text-white" href="{{ route('painel.contact') }}"><i class="fa-solid fa-address-book"></i> Contato</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="#"><i class="fa-solid fa-volleyball"></i> Encontro de
