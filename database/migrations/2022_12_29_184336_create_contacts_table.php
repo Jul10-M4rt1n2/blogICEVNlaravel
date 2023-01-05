@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->longText('description')->nullable();
-            $table->boolean('accept')->nullable();
+            $table->string('accept')->nullable();
             $table->timestamps();
         });
     }

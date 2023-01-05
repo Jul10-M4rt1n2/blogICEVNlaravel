@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\SendMail;
 use App\Services\Contracts\ContactServiceInterface;
 use Illuminate\Http\Request;
+use Termwind\Components\Dd;
 
 class ContactController extends Controller
 {
@@ -33,10 +34,11 @@ class ContactController extends Controller
         //a variavel $orderByOrder recebe o valor da variavel orderByOrder do request
         $orderByOrder = ($request->input('orderByOrder')) ? $request->input('orderByOrder') : 'asc';
 
+        //lista todos os dados
         $data = $this->model->all($request, $orderByField, $orderByOrder, $paginate);
 
         //retorna a view index com os dados
-        return view('painel.contact.index',[
+        return view('painel.contact.index', [
             'data' => $data,
             'paginate' => $paginate,
             'orderByField' => $orderByField,
@@ -85,9 +87,36 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $data = $this->model->all();
+
+        return view('painel.contact.sendEmail', [
+            'data' => $data,
+        ]);
+    }
+
+    //funcao para enviar para todos os emails cadastrados e que aceitaram receber emails
+    public function sendEmailAll(Request $request)
+    {
+        $emails = $request->all();
+
+        if ($request->hasFile('attachment')) {
+            // $request->file('attachment')->store('novidades');
+            $imageName = time() . '.' . $request->attachment->extension();
+
+            $request->attachment->move(
+                public_path('storage/images'),
+                $imageName
+            );
+            $request->merge(array('image' => "storage/images/" . $imageName));
+        }
+
+        $emails = $request->all();
+
+        \Mail::send(new \App\Mail\AllSendMail($emails));
+
+        return redirect()->back()->with('success', 'Email enviado com sucesso!');
     }
 
     /**
@@ -98,7 +127,6 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
@@ -121,6 +149,6 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-       //
+        //
     }
 }

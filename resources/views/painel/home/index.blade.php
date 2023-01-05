@@ -5,13 +5,13 @@
 @endsection
 
 @section('content')
-    <div class="container py-5" style="margin-left: 25%;">
+    <div class="container py-5 custom-position-left-div">
         <div class="row">
             <div class="col-12 colxl-12 col-lg-12 col-md-12 col-sm-12">
                 <h1>Dashboard - Home page</h1>
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body overflow-auto">
                             <!--Formulário de pesquisa search com icone-->
                             <form action="#" method="POST" class="form form-inline">
                                 @csrf
@@ -27,7 +27,7 @@
         </div>
         <div class="col-12 mt-3">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body overflow-auto">
                     <table class="table table-bordered table-striped">
                         <thead class="table-dark">
                             <tr>

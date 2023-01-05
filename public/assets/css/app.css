@@ -244,7 +244,23 @@
   transform: translateX(10px);
 }
 
+.custom-position-left-div {
+  position: relative !important;
+  left: 10% !important;
+  width: 100% !important;
+}
+
+@media (max-width: 1399px) {
+  .custom-position-left-div {
+    position: relative !important;
+    left: 14% !important;
+    width: 70% !important;
+  }
+}
 @media (max-width: 789px) {
+  .custom-position-left-div {
+    left: 0% !important;
+  }
   .mobile-version-cards {
     display: flex;
     flex-direction: column;

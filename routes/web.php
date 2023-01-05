@@ -95,6 +95,7 @@ Route::group(
         //Rotas da pagina contato
         Route::get('/contato', [ContactController::class, 'index'])->name('painel.contact');
         Route::post('/send-mail', [ContactController::class, 'store'])->name('painel-send-mail');
-        Route::get('/contato/enviar-lista-email', [ContactController::class, 'edit'])->name('painel-contact-edit');
+        Route::get('/contato/enviar-lista-email', [ContactController::class, 'show'])->name('painel-contact-show');
+        Route::post('/contato/enviar-lista-email', [ContactController::class, 'sendEmailAll'])->name('painel-contact-send');
     }
 );

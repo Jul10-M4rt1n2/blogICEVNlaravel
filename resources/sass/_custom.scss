@@ -260,8 +260,26 @@
     }
 }
 
+.custom-position-left-div {
+    position: relative !important;
+    left: 10% !important;
+    width: 100% !important;
+}
+
+@media(max-width: 1399px) {
+    .custom-position-left-div {
+        position: relative !important;
+        left: 14% !important;
+        width: 70% !important;
+    }
+}
+
 //modile medea page
 @media(max-width: 789px) {
+    .custom-position-left-div {
+        left: 0% !important;
+    }
+
     .mobile-version-cards {
         display: flex;
         flex-direction: column;
@@ -275,7 +293,7 @@
     }
 }
 
-.custom-input-form  input{
+.custom-input-form input {
     background-color: #fff;
     color: #212529;
     border: 1px solid #E4E7ED;
@@ -289,7 +307,7 @@
     }
 }
 
-.custom-input-form  textarea{
+.custom-input-form textarea {
     background-color: #fff;
     color: #212529;
     border: 1px solid #E4E7ED;
@@ -303,7 +321,7 @@
     }
 }
 
-.custon-title-form-contact{
+.custon-title-form-contact {
     font-family: 'Dancing Script', cursive;
     font-size: 5rem;
     font-weight: 600;
