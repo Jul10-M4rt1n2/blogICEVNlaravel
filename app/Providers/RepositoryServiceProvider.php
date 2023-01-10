@@ -12,10 +12,12 @@ use App\Repositories\Contracts\HomeRepositoryInterface;
 use App\Repositories\Contracts\StudiesRepositoryInterface;
 use App\Repositories\Contracts\TimelineRepositoryInterface;
 use App\Repositories\Contracts\WhoweareRepositoryInterface;
+use App\Repositories\Contracts\YoungRepositoryInterface;
 use App\Repositories\HomeRepository;
 use App\Repositories\StudiesRepository;
 use App\Repositories\TimelineRepository;
 use App\Repositories\WhoweareRepository;
+use App\Repositories\YoungRepository;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -34,6 +36,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(StudiesRepositoryInterface::class, StudiesRepository::class);
         $this->app->bind(WhoweareRepositoryInterface::class, WhoweareRepository::class);
         $this->app->bind(ContactRepositoryInterface::class, ContactRepository::class);
+        $this->app->bind(YoungRepositoryInterface::class, YoungRepository::class);
     }
 
     /**

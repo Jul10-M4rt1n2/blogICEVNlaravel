@@ -12,10 +12,12 @@ use App\Services\Contracts\HomeServiceInterface;
 use App\Services\Contracts\StudiesServiceInterface;
 use App\Services\Contracts\TimelineServiceInterface;
 use App\Services\Contracts\WhoweareServiceInterface;
+use App\Services\Contracts\YoungServiceInterface;
 use App\Services\HomeService;
 use App\Services\StudiesService;
 use App\Services\TimelineService;
 use App\Services\WhoweareService;
+use App\Services\YoungService;
 use Illuminate\Support\ServiceProvider;
 
 class ServicesServiceProvider extends ServiceProvider
@@ -34,6 +36,7 @@ class ServicesServiceProvider extends ServiceProvider
         $this->app->bind(StudiesServiceInterface::class, StudiesService::class);
         $this->app->bind(WhoweareServiceInterface::class, WhoweareService::class);
         $this->app->bind(ContactServiceInterface::class, ContactService::class);
+        $this->app->bind(YoungServiceInterface::class, YoungService::class);
     }
 
     /**

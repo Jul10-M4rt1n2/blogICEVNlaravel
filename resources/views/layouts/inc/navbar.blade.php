@@ -69,7 +69,7 @@
                 <a class="nav-link text-white" href="{{ route('painel.contact') }}"><i class="fa-solid fa-address-book"></i> Contato</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fa-solid fa-volleyball"></i> Encontro de
+                <a class="nav-link text-white" href="{{ route('painel.young') }}"><i class="fa-solid fa-volleyball"></i> Encontro de
                     jovens</a>
             </li>
             <li class="nav-item">

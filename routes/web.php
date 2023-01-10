@@ -9,11 +9,13 @@ use App\Http\Controllers\Painel\PainelController;
 use App\Http\Controllers\Painel\StudiesController;
 use App\Http\Controllers\Painel\TimelineController;
 use App\Http\Controllers\Painel\WhoweareController;
+use App\Http\Controllers\Painel\YoungController;
 use App\Http\Controllers\Site\BookSiteController;
 use App\Http\Controllers\Site\HomeSiteController;
 use App\Http\Controllers\Site\StudiesSiteController;
 use App\Http\Controllers\Site\TimelineSiteController;
 use App\Http\Controllers\Site\whoweareSiteController;
+use App\Http\Controllers\Site\YoungSiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +48,8 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('/contato', function () {
         return view('site.contact.index');
     })->name('site.contact');
+    //rota para a pagina encontro de jovens
+    Route::get('/ encontro-de-jovens', [YoungSiteController::class, 'index'])->name('site.young');
 });
 
 //rota de login
@@ -97,5 +101,12 @@ Route::group(
         Route::post('/send-mail', [ContactController::class, 'store'])->name('painel-send-mail');
         Route::get('/contato/enviar-lista-email', [ContactController::class, 'show'])->name('painel-contact-show');
         Route::post('/contato/enviar-lista-email', [ContactController::class, 'sendEmailAll'])->name('painel-contact-send');
+        //Rotas da pagina encontro de jovens
+        Route::get('/encontro-de-jovens', [YoungController::class, 'index'])->name('painel.young');
+        Route::get('/encontro-de-jovens/cadastrar', [YoungController::class, 'create'])->name('painel-young-create');
+        Route::post('/encontro-de-jovens/store', [YoungController::class, 'store'])->name('painel-young-store');
+        Route::get('/encontro-de-jovens/editar/{id}', [YoungController::class, 'edit'])->name('painel-young-edit');
+        Route::put('/encontro-de-jovens/update/{id}', [YoungController::class, 'update'])->name('painel-young-update');
+        Route::delete('/encontro-de-jovens/destroy/{id}', [YoungController::class, 'destroy'])->name('painel-young-destroy');
     }
 );
