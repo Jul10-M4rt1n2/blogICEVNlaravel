@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\Painel\BookController;
 use App\Http\Controllers\Painel\ContactController;
 use App\Http\Controllers\Painel\HomeController;
+use App\Http\Controllers\painel\OfferingsController;
 use App\Http\Controllers\Painel\PainelController;
 use App\Http\Controllers\Painel\StudiesController;
 use App\Http\Controllers\Painel\TimelineController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Painel\WhoweareController;
 use App\Http\Controllers\Painel\YoungController;
 use App\Http\Controllers\Site\BookSiteController;
 use App\Http\Controllers\Site\HomeSiteController;
+use App\Http\Controllers\Site\OfferingsSiteController;
 use App\Http\Controllers\Site\StudiesSiteController;
 use App\Http\Controllers\Site\TimelineSiteController;
 use App\Http\Controllers\Site\whoweareSiteController;
@@ -49,7 +51,9 @@ Route::group(['namespace' => 'Site'], function () {
         return view('site.contact.index');
     })->name('site.contact');
     //rota para a pagina encontro de jovens
-    Route::get('/ encontro-de-jovens', [YoungSiteController::class, 'index'])->name('site.young');
+    Route::get('/encontro-de-jovens', [YoungSiteController::class, 'index'])->name('site.young');
+    //rota para a pagina dizimos e ofertas
+    Route::get('/dizimos-e-ofertas', [OfferingsSiteController::class, 'index'])->name('site.offers');
 });
 
 //rota de login
@@ -108,5 +112,12 @@ Route::group(
         Route::get('/encontro-de-jovens/editar/{id}', [YoungController::class, 'edit'])->name('painel-young-edit');
         Route::put('/encontro-de-jovens/update/{id}', [YoungController::class, 'update'])->name('painel-young-update');
         Route::delete('/encontro-de-jovens/destroy/{id}', [YoungController::class, 'destroy'])->name('painel-young-destroy');
+        //Rotas da pagina dizimos e ofertas
+        Route::get('/dizimos-e-ofertas', [OfferingsController::class, 'index'])->name('painel.offerings');
+        Route::get('/dizimos-e-ofertas/cadastrar', [OfferingsController::class, 'create'])->name('painel-offerings-create');
+        Route::post('/dizimos-e-ofertas/store', [OfferingsController::class, 'store'])->name('painel-offerings-store');
+        Route::get('/dizimos-e-ofertas/editar/{id}', [OfferingsController::class, 'edit'])->name('painel-offerings-edit');
+        Route::put('/dizimos-e-ofertas/update/{id}', [OfferingsController::class, 'update'])->name('painel-offerings-update');
+        Route::delete('/dizimos-e-ofertas/destroy/{id}', [OfferingsController::class, 'destroy'])->name('painel-offerings-destroy');
     }
 );

@@ -9,11 +9,13 @@ use App\Services\Contracts\BaseServiceInterface;
 use App\Services\Contracts\BookServiceInterface;
 use App\Services\Contracts\ContactServiceInterface;
 use App\Services\Contracts\HomeServiceInterface;
+use App\Services\Contracts\OffersServiceInterface;
 use App\Services\Contracts\StudiesServiceInterface;
 use App\Services\Contracts\TimelineServiceInterface;
 use App\Services\Contracts\WhoweareServiceInterface;
 use App\Services\Contracts\YoungServiceInterface;
 use App\Services\HomeService;
+use App\Services\OffersService;
 use App\Services\StudiesService;
 use App\Services\TimelineService;
 use App\Services\WhoweareService;
@@ -37,6 +39,7 @@ class ServicesServiceProvider extends ServiceProvider
         $this->app->bind(WhoweareServiceInterface::class, WhoweareService::class);
         $this->app->bind(ContactServiceInterface::class, ContactService::class);
         $this->app->bind(YoungServiceInterface::class, YoungService::class);
+        $this->app->bind(OffersServiceInterface::class, OffersService::class);
     }
 
     /**

@@ -9,11 +9,13 @@ use App\Repositories\Contracts\BaseRepositoryInterface;
 use App\Repositories\Contracts\BookRepositoryInterface;
 use App\Repositories\Contracts\ContactRepositoryInterface;
 use App\Repositories\Contracts\HomeRepositoryInterface;
+use App\Repositories\Contracts\OffersRepositoryInterface;
 use App\Repositories\Contracts\StudiesRepositoryInterface;
 use App\Repositories\Contracts\TimelineRepositoryInterface;
 use App\Repositories\Contracts\WhoweareRepositoryInterface;
 use App\Repositories\Contracts\YoungRepositoryInterface;
 use App\Repositories\HomeRepository;
+use App\Repositories\OffersRepository;
 use App\Repositories\StudiesRepository;
 use App\Repositories\TimelineRepository;
 use App\Repositories\WhoweareRepository;
@@ -37,6 +39,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(WhoweareRepositoryInterface::class, WhoweareRepository::class);
         $this->app->bind(ContactRepositoryInterface::class, ContactRepository::class);
         $this->app->bind(YoungRepositoryInterface::class, YoungRepository::class);
+        $this->app->bind(OffersRepositoryInterface::class, OffersRepository::class);
     }
 
     /**

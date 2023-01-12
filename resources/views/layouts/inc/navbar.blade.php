@@ -73,11 +73,11 @@
                     jovens</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fa-solid fa-heart-pulse"></i> Pedidos de
+                <a class="nav-link text-white" href="{{ route('painel.contact') }}"><i class="fa-solid fa-heart-pulse"></i> Pedidos de
                     oracao</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fa-solid fa-money-bill"></i> Dizimos e
+                <a class="nav-link text-white" href="{{ route('painel.offerings') }}"><i class="fa-solid fa-money-bill"></i> Dizimos e
                     ofertas</a>
             </li>
             <li class="nav-item">
