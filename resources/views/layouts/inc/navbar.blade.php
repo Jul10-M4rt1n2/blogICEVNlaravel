@@ -80,18 +80,20 @@
                 <a class="nav-link text-white" href="{{ route('painel.offerings') }}"><i class="fa-solid fa-money-bill"></i> Dizimos e
                     ofertas</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#"><i class="fa-solid fa-users"></i> Perfis</a>
-            </li>
+            <!--exibir esta opcao somente para o admin-->
+            @if (Auth::user()->id == 1)
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('painel-user-show') }}"><i class="fa-solid fa-users"></i> Perfis</a>
+                </li>                
+            @endif
         </ul>
     </div>
     <!--perfil logado-->
     <div class="offcanvas-footer">
         <div class="text-center">
-            <!--imagem do usuário redonda-->
-            <img src="{{ asset('assets/image/julio.jpg') }}" width="40" class="rounded-circle" alt="...">
-            <p class="text-center text-white">Olá, Júlio Martins</p>
-            <a href="#" class="btn custom-btn-info">Perfil</a>
+            <img src="{{ asset(Auth::user()->image) }}" width="40" class="rounded-circle" alt="...">
+            <p class="text-center text-white">Olá, {{ Auth::user()->name }}</p>
+            <a href="{{ route('painel-user-edit', Auth::user()->id) }}" class="btn custom-btn-info">Perfil</a>
             <a href="{{ route('logout') }}" class="btn custom-btn-danger">Sair</a>
         </div>
     </div>

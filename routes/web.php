@@ -77,7 +77,7 @@ Route::group(
         Route::get('/livros-e-revistas/cadastrar', [BookController::class, 'create'])->name('painel-books-create');
         Route::post('/livros-e-revistas/store', [BookController::class, 'store'])->name('painel-books-store');
         Route::get('/livros-e-revistas/editar/{id}', [BookController::class, 'edit'])->name('painel-books-edit');
-        Route::put('/livros-e-revistas/update/{id}', [BookController::class, 'update'])->name('painel-books-update');
+        Route::put('/livros-e-revistas/update/{id}', [BookController::class, 'update'])->name('painel-books-update');   
         Route::delete('/livros-e-revistas/destroy/{id}', [BookController::class, 'destroy'])->name('painel-books-destroy');
         //Rotas da pagina de cronograma timeline
         Route::get('/cronograma', [TimelineController::class, 'index'])->name('painel.timeline');
@@ -119,5 +119,12 @@ Route::group(
         Route::get('/dizimos-e-ofertas/editar/{id}', [OfferingsController::class, 'edit'])->name('painel-offerings-edit');
         Route::put('/dizimos-e-ofertas/update/{id}', [OfferingsController::class, 'update'])->name('painel-offerings-update');
         Route::delete('/dizimos-e-ofertas/destroy/{id}', [OfferingsController::class, 'destroy'])->name('painel-offerings-destroy');
+        //Rotas para criar o usuario
+        Route::get('/listar-usuarios', [AuthController::class, 'show'])->name('painel-user-show');
+        Route::get('/criar-usuario', [AuthController::class, 'create'])->name('painel-user-create');
+        Route::post('/criar-usuario/store', [AuthController::class, 'store'])->name('painel-user-store');
+        Route::get('/criar-usuario/editar/{id}', [AuthController::class, 'edit'])->name('painel-user-edit');
+        Route::put('/criar-usuario/update/{id}', [AuthController::class, 'update'])->name('painel-user-update');
+        Route::delete('/criar-usuario/destroy/{id}', [AuthController::class, 'destroy'])->name('painel-user-destroy');
     }
 );

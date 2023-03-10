@@ -24,8 +24,9 @@ class DatabaseSeeder extends Seeder
         //criando um susuário admin para o sistema
         \App\Models\User::factory()->create([
             'name' => 'Admin',
-            'email' => 'juliorzo@hotmail.com',
-            'password' => '123456',
+            'email' => 'admin@admin.com',
+            'password' => '1q2w3e4r',
+            'image' => 'default.png',
         ]);
     }
 }

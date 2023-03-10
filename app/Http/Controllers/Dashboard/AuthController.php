@@ -58,7 +58,9 @@ class AuthController extends Controller
      */
     public function create()
     {
-        //
+        return view('painel.auth.form', [
+            'data' => null
+        ]);
     }
 
     /**
@@ -69,7 +71,20 @@ class AuthController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            if ($request->hasFile('img')) {
+
+                $imageName = time() . '.' . $request->img->extension();
+                $request->img->move(public_path('storage/images'), $imageName);
+                $request->merge(array('image' => "storage/images/" . $imageName));
+            }
+
+            //Salvando o novo usuário
+            User::create($request->all());
+            return redirect()->route('painel-user-show')->with('success', 'Usuário cadastrado com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
 
     /**
@@ -78,9 +93,20 @@ class AuthController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        //listar todos os usuarios
+        $users = User::all();
+        //pegar usuário logado
+        $user = Auth::user();
+        //retornar a view com os dados
+        return view(
+            'painel.auth.index',
+            [
+                'users' => $users,
+                'user' => $user
+            ]
+        );
     }
 
     /**
@@ -91,7 +117,11 @@ class AuthController extends Controller
      */
     public function edit($id)
     {
-        //
+        //editar o usuário
+        $user = User::find($id);
+        return view('painel.auth.form', [
+            'data' => $user
+        ]);
     }
 
     /**
@@ -103,7 +133,22 @@ class AuthController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            if ($request->hasFile('img')) {
+
+                $imageName = time() . '.' . $request->img->extension();
+                $request->img->move(public_path('storage/images'), $imageName);
+                $request->merge(array('image' => "storage/images/" . $imageName));
+            }
+
+            //Salvando o novo usuário
+            $user = User::find($id);
+            $user = $user->update($request->all());
+            // $user->update($request->all);
+            return redirect()->route('painel-user-show')->with('success', 'Usuário atualizado com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
 
     /**
@@ -114,6 +159,9 @@ class AuthController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //excluir o usuário
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('painel-user-show')->with('success', 'Usuário excluído com sucesso!');
     }
 }

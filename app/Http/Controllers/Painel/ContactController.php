@@ -112,7 +112,12 @@ class ContactController extends Controller
             $request->merge(array('image' => "storage/images/" . $imageName));
         }
 
-        $emails = $request->all();
+        //pegar todos os email com accept = on
+        $emails = $this->model->all()->where('accept', 'on')->pluck('email')->toArray();
+        //pegar a descricao do formulário e o anexo
+        $form = $request->all();
+        //juntar os dois arrays
+        $emails = array_merge($emails, $form);
 
         \Mail::send(new \App\Mail\AllSendMail($emails));
 
