@@ -69,7 +69,7 @@
                                     <a href="{{ route('painel-books-edit', $item->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                 </td> --}}
                                         <td class="text-center">
-                                            <form action="{{ route('painel-books-destroy', $item->id) }}" method="POST">
+                                            <form action="{{ route('painel-contact-destroy', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-danger"><i
@@ -120,7 +120,7 @@
                                     <a href="{{ route('painel-books-edit', $item->id) }}" class="btn btn-warning"><i class="fas fa-edit"></i></a>
                                 </td> --}}
                                         <td class="text-center">
-                                            <form action="{{ route('painel-books-destroy', $item->id) }}" method="POST">
+                                            <form action="{{ route('painel-contact-destroy', $item->id) }}" method="POST">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn btn-danger"><i

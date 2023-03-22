@@ -1,0 +1,17 @@
+HOME
+. Ajuste de imagens - ok
+. Text area, ferramentas
+. Para min o viver é Cristo - ok
+. Cards, btn sempre no footer - ok
+. Ultima sessao nao esta exibindo o texto quando pequeno - ok
+. Mudar a logo.... para a nova logo - ok
+. Colocar um video na Home - video do youtube -ok Falta o CRUD
+
+DASHBOARD
+. Erro ao deletar formulário da Home - ok
+
+LIVROS E REVISTAS
+. PDF nao abriu por ser grande - tratar cash
+
+MIDEA
+. videos do youtube Agua viva

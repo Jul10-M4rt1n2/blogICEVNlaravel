@@ -1,7 +1,7 @@
 <ul class="nav justify-content-end bg-black p-2">
     <li class="nav-item">
         <a class="navbar-brand" href="{{ route('painel') }}">
-            <img src="{{ asset('assets/image/logo-ICEVN.png') }}" width="50" alt="Logo"
+            <img src="{{ asset('assets/image/logotipo-ICEVN.png') }}" width="50" alt="Logo"
                 class="img-fluid text-white">
         </a>
     </li>
@@ -18,7 +18,7 @@
         <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
             <!--logo-->
             <a href="{{ route('painel') }}" class="navbar-brand">
-                <img src="{{ asset('assets/image/logo-ICEVN.png') }}" alt="Logo" class="img-fluid text-white">
+                <img src="{{ asset('assets/image/logotipo-ICEVN.png') }}" alt="Logo" class="img-fluid text-white">
             </a>
         </h5>
         <button type="button" class="btn-close bg-danger" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -26,7 +26,7 @@
     <div class="offcanvas-body">
         <!--versiculo inicial-->
         <div class="text-center">
-            <p class="text-center text-white">"O Senhor é o meu pastor, nada me faltará." Salmos 23:1</p>
+            <p class="text-center text-white">"Porque para mim o viver é Cristo" Filipenses 1:21</p>
         </div>
         <!--menu e subimenu lista-->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -84,7 +84,7 @@
             @if (Auth::user()->id == 1)
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{ route('painel-user-show') }}"><i class="fa-solid fa-users"></i> Perfis</a>
-                </li>                
+                </li>
             @endif
         </ul>
     </div>

@@ -2,7 +2,7 @@
 
 
     @slot('header')
-        @component('vendor.mail.html.header', ['url' => config('app.url')])
+        @component('vendor.mail.html.header', ['url' => 'http://blogicevn.tk/'])
             {{ config('app.name') }}
         @endcomponent
     @endslot
@@ -13,8 +13,6 @@
     Seu e-mail é: {{ $data['email'] }}
 
     Sua mensagem é: {{ $data['description'] }}
-
-    {{-- @dd($data) --}}
 
     Agradecemos seu contato. Retornaremos assim que possivel.
 

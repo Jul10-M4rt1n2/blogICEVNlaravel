@@ -1,16 +1,15 @@
 @component('vendor.mail.html.message')
 
-
     @slot('header')
-        @component('vendor.mail.html.header', ['url' => config('app.url')])
+        @component('vendor.mail.html.header', ['url' => 'http://blogicevn.tk/'])
             {{ config('app.name') }}
         @endcomponent
     @endslot
 
-        {{ $data['description'] }}        
-    
-    @component('vendor.mail.html.button', ['url' => 'https://laravel.com/docs/9.x/notifications#customizing-the-subject'])
-    
+    {{ $data['description'] }}
+
+    @component('vendor.mail.html.button', ['url' => 'http://blogicevn.tk/'])
+
         @lang('Clique aqui para acessar o site')
 
     @endcomponent

@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg custom-bg-header">
         <div class="container">
             <a class="navbar-brand text-light" href="{{ url('/') }}"><img
-                    src="{{ asset('assets/image/logo-ICEVN.png') }}" alt=""
+                    src="{{ asset('assets/image/logotipo-ICEVN.png') }}" alt=""
                     class="img-logo custom-card-img-effect"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

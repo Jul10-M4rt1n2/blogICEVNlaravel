@@ -77,7 +77,7 @@ Route::group(
         Route::get('/livros-e-revistas/cadastrar', [BookController::class, 'create'])->name('painel-books-create');
         Route::post('/livros-e-revistas/store', [BookController::class, 'store'])->name('painel-books-store');
         Route::get('/livros-e-revistas/editar/{id}', [BookController::class, 'edit'])->name('painel-books-edit');
-        Route::put('/livros-e-revistas/update/{id}', [BookController::class, 'update'])->name('painel-books-update');   
+        Route::put('/livros-e-revistas/update/{id}', [BookController::class, 'update'])->name('painel-books-update');
         Route::delete('/livros-e-revistas/destroy/{id}', [BookController::class, 'destroy'])->name('painel-books-destroy');
         //Rotas da pagina de cronograma timeline
         Route::get('/cronograma', [TimelineController::class, 'index'])->name('painel.timeline');
@@ -105,6 +105,7 @@ Route::group(
         Route::post('/send-mail', [ContactController::class, 'store'])->name('painel-send-mail');
         Route::get('/contato/enviar-lista-email', [ContactController::class, 'show'])->name('painel-contact-show');
         Route::post('/contato/enviar-lista-email', [ContactController::class, 'sendEmailAll'])->name('painel-contact-send');
+        Route::delete('/contato/destroy/{id}', [ContactController::class, 'destroy'])->name('painel-contact-destroy');
         //Rotas da pagina encontro de jovens
         Route::get('/encontro-de-jovens', [YoungController::class, 'index'])->name('painel.young');
         Route::get('/encontro-de-jovens/cadastrar', [YoungController::class, 'create'])->name('painel-young-create');

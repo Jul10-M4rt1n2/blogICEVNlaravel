@@ -13,6 +13,15 @@
   font-family: "Roboto", sans-serif;
 }
 
+.img-custom {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
 .body-paralax {
   background: url("/assets/image/paralax-img.jpg");
   height: 100%;

@@ -2,8 +2,8 @@
 <div class="container-fluid custom-bg-footer p-5">
     <div class="row">
         <div class="col-md-3">
-            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('assets/image/logo-ICEVN.png') }}" alt="" width="80" height="50" class="custom-card-img-effect"></a>
-            <p class="custom-text-footer mt-3">Porque para mim o viver é Cristo e o morrer é lucro</p>
+            <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('assets/image/logotipo-ICEVN.png') }}" alt="" width="80" height="50" class="custom-card-img-effect"></a>
+            <p class="custom-text-footer mt-3">Porque para mim o viver é Cristo</p>
             <p class="custom-text-footer">Filipenses 1:21</p>
         </div>
         <div class="col-md-3">
