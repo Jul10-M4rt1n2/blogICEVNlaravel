@@ -65,6 +65,19 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+        //Salvar as imagens do flipbook como array json
+        $images = [];
+        $i = 1;
+        if ($request->hasFile('flip_img')) {
+            foreach ($request->file('flip_img') as $image) {
+                $name = time().'.'. $i.$image->extension();
+                $image->move(public_path('storage/images'), $name);
+                $images[] = "storage/images/" . $name;
+                $i++;
+            }
+        }
+        $request->merge(['images' => json_encode($images)]);
+
         //tratando os erros
         try {
             //regra para salvar as imagens na pasta public/storage/images e salvar o pdf na pasta public/storage/pdf
@@ -135,6 +148,17 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $images = [];
+        $i = 1;
+        if ($request->hasFile('flip_img')) {
+            foreach ($request->file('flip_img') as $image) {
+                $name = time().'.'. $i.$image->extension();
+                $image->move(public_path('storage/images'), $name);
+                $images[] = "storage/images/" . $name;
+                $i++;
+            }
+        }
+        $request->merge(['images' => json_encode($images)]);
         //tratando erro ao tentar salvar a edicao
         try {
             //chama o metodo update do servico

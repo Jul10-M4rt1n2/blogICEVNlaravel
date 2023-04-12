@@ -32,11 +32,11 @@
                 @if (count($registros) > 0 && count($registros) < 3)
                     @foreach ($registros as $key => $item)
                         <div class="carousel-item @php if ($i == 0){echo'active';} @endphp custom-gradient-dark-2"
-                            style="max-height: 90vh">
+                             style="max-height: 90vh">
                             <img src="{{ asset($item->image1) }}" class="d-block w-100" alt="..." style="opacity: 0.3;"
-                                alt="...">
+                                 alt="...">
                             <div class="carousel-caption d-none d-md-block"
-                                style="right: 50% !important; left: 2% !important; bottom: 20% !important;">
+                                 style="right: 50% !important; left: 2% !important; bottom: 20% !important;">
                                 <h5>{{ $item->title }}</h5>
                                 <p>{{ $item->subtitle }}</p>
                                 <p>{{ Str::limit($item->summary, 350) }}</p>
@@ -49,11 +49,11 @@
                 @elseif (count($registros) > 3)
                     @foreach ($registros->random(3) as $key => $item)
                         <div class="carousel-item @php if ($i == 0){echo'active';} @endphp custom-gradient-dark-2"
-                            style="max-height: 90vh">
+                             style="max-height: 90vh">
                             <img src="{{ asset($item->image1) }}" class="d-block w-100" alt="..." style="opacity: 0.3;"
-                                alt="...">
+                                 alt="...">
                             <div class="carousel-caption d-none d-md-block"
-                                style="right: 50% !important; left: 2% !important; bottom: 20% !important;">
+                                 style="right: 50% !important; left: 2% !important; bottom: 20% !important;">
                                 <h5>{{ $item->title }}</h5>
                                 <p>{{ $item->subtitle }}</p>
                                 <p>{{ Str::limit($item->summary, 350) }}</p>
@@ -65,9 +65,9 @@
                     @endforeach
                 @else
                     <img src="{{ asset('assets/image/banner-livros-revista.jpg') }}" class="d-block w-100"
-                        style="opacity: 0.3;" alt="...">
+                         style="opacity: 0.3;" alt="...">
                     <div class="carousel-caption d-none d-md-block"
-                        style="right: 50% !important; left: 2% !important; bottom: 35% !important;">
+                         style="right: 50% !important; left: 2% !important; bottom: 35% !important;">
                         <h5>Titulo do livro ou da revista</h5>
                         <h3>Subtitulo do livro ou da revista</h3>
                         <p>Aqui voce verá o resumo do livro, e escolher o que melhor de agradar. Nesta pagina será
@@ -92,6 +92,34 @@
                 </div>
                 <div class="row">
                     <!--carregar todos os registro de livros do banco de dados sendo somente image2 que é a capa do livro-->
+                    {{--                    @if (count($flipbooks) > 0)--}}
+                    {{--                        @foreach ($flipbooks as $item)--}}
+                    {{--                            <!--verificando se é livro ou revista conforme o select no cadastro-->--}}
+                    {{--                            @if ($item)--}}
+                    {{--                                <div class="col-12 col-md-3 d-block">--}}
+                    {{--                                    <a href="{{ route('books.show', $item->id) }}" class="card-link">--}}
+                    {{--                                        <div class="card border border-0 shadow" style="width: 18rem;">--}}
+                    {{--                                            <img src="{{ asset(explode(",",$item->content)[0]) }}" class="card-img custom-card-img-effect"--}}
+                    {{--                                                alt="...">--}}
+                    {{--                                            --}}{{-- <div class="card-body">--}}
+                    {{--                                        <h5 class="card-title">Card title</h5>--}}
+                    {{--                                        <p class="card-text">Some quick example text to build on the card title and make up the--}}
+                    {{--                                            bulk of the card's content.</p>--}}
+                    {{--                                        <a href="#" class="btn btn-primary">Go somewhere</a>--}}
+                    {{--                                    </div> --}}
+                    {{--                                        </div>--}}
+                    {{--                                    </a>--}}
+                    {{--                                </div>--}}
+                    {{--                            @endif--}}
+                    {{--                        @endforeach--}}
+                    {{--                    @else--}}
+                    {{--                        <div class="col-12 col-md-3 d-block">--}}
+                    {{--                            <!--alertar que nao registro registrado--->--}}
+                    {{--                            <div class="alert alert-warning" role="alert">--}}
+                    {{--                                Nenhum registro encontrado!--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    @endif--}}
                     @if (count($registros) > 0 && count($registros->where('category', 'livro')) > 0)
                         @foreach ($registros as $item)
                             <!--verificando se é livro ou revista conforme o select no cadastro-->
@@ -99,14 +127,16 @@
                                 <div class="col-12 col-md-3 d-block">
                                     <a href="{{ route('books.show', $item->id) }}" class="card-link">
                                         <div class="card border border-0 shadow" style="width: 18rem;">
-                                            <img src="{{ asset($item->image2) }}" class="card-img custom-card-img-effect"
-                                                alt="...">
-                                            {{-- <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the
-                                            bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div> --}}
+                                            <img src="{{ asset($item->image2) }}"
+                                                 class="card-img custom-card-img-effect"
+                                                 alt="...">
+{{--                                            <div class="card-body">--}}
+{{--                                                <h5 class="card-title">Card title</h5>--}}
+{{--                                                <p class="card-text">Some quick example text to build on the card title--}}
+{{--                                                    and make up the--}}
+{{--                                                    bulk of the card's content.</p>--}}
+{{--                                                <a href="#" class="btn btn-primary">Go somewhere</a>--}}
+{{--                                            </div>--}}
                                         </div>
                                     </a>
                                 </div>
@@ -135,8 +165,9 @@
                                 <div class="col-12 col-md-3 d-block">
                                     <a href="{{ route('books.show',  $item->id) }}" class="card-link">
                                         <div class="card border border-0 shadow" style="width: 18rem;">
-                                            <img src="{{ asset($item->image2) }}" class="card-img custom-card-img-effect"
-                                                alt="...">
+                                            <img src="{{ asset($item->image2) }}"
+                                                 class="card-img custom-card-img-effect"
+                                                 alt="...">
                                             {{-- <div class="card-body">
                                         <h5 class="card-title">Card title</h5>
                                         <p class="card-text">Some quick example text to build on the card title and make up the

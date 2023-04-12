@@ -196,6 +196,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\ServicesServiceProvider::class,
+        //flipbook
+        'rudrarajiv\flipbooklaravel\FlipBookServiceProvider',
 
     ],
 

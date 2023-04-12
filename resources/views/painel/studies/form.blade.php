@@ -26,7 +26,7 @@
                                         @error('file')
                                             <div class="alert alert-danger">
                                                 {{ $message }}
-                                            </div>                                            
+                                            </div>
                                         @enderror
                                     </div>
                                     <hr>
@@ -48,17 +48,17 @@
                                             <div class="alert alert-danger mt-2" role="alert">
                                                 {{ $message }}
                                             </div>
-                                        @enderror                                        
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <!--resumo summary-->
                                         <label for="summary">Resumo</label>
-                                        <textarea name="summary" id="summary" cols="30" rows="10" class="form-control">{{ $data->summary ?? old('summary') }}</textarea>
+                                        <textarea name="summary" id="summary" cols="30" rows="10" class="form-control editor">{{ $data->summary ?? old('summary') }}</textarea>
                                         @error('summary')
                                             <div class="alert alert-danger mt-2" role="alert">
                                                 {{ $message }}
                                             </div>
-                                        @enderror                                       
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <!--imagem de destaque para o banner img_emphasis-->
@@ -68,8 +68,8 @@
                                             <div class="alert alert-danger mt-2" role="alert">
                                                 {{ $message }}
                                             </div>
-                                        @enderror                                        
-                                    </div>                                    
+                                        @enderror
+                                    </div>
                                     <div class="form-group">
                                         <!--imagem de capa de cada card de livros ou revistas img_front_cover-->
                                         <label for="img_front_cover">Imagem de capa de cada card</label>
@@ -78,7 +78,7 @@
                                             <div class="alert alert-danger mt-2" role="alert">
                                                 {{ $message }}
                                             </div>
-                                        @enderror                                        
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <!--select de categoria livro e revista category-->
@@ -87,7 +87,7 @@
                                             <option value="ebq" {{ isset($data) && $data->category == 'ebq' ? 'selected' : '' }}>EBQ</option>
                                             <option value="outros" {{ isset($data) && $data->category == 'outros' ? 'selected' : '' }}>Outros</option>
                                         </select>
-                                    </div>  
+                                    </div>
                                     <!--btn voltar e salvar-->
                                     <div class="form-group text-end my-2">
                                         <a href="{{ route('painel.studies') }}" class="btn btn-danger">Voltar</a>

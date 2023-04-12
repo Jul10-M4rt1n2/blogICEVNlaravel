@@ -314,6 +314,11 @@
   color: #212529;
 }
 
+@media (max-width: 789px) {
+  .books_magazine .col-12 .container .title_subtitle {
+    display: none;
+  }
+}
 .custom-bg-header {
   background-color: transparent;
 }

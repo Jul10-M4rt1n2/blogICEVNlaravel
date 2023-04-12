@@ -19,7 +19,7 @@
                                     <div class="form-group">
                                         <!--resumo summary-->
                                         <label for="description">Texto do corpo do e-mail</label>
-                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control editor"></textarea>
                                         @error('description')
                                             <div class="alert alert-danger mt-2" role="alert">
                                                 {{ $message }}

@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('subtitle')->nullable();
-            $table->string('pdf')->nullable();
+//            $table->string('pdf')->nullable();
+            $table->string('images')->nullable();
             $table->longText('summary')->nullable();
             $table->string('image1')->nullable();
             $table->string('image2')->nullable();

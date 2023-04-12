@@ -33,7 +33,7 @@
                                     <div class="form-group">
                                         <!--Descricao da atividade referente ao dia da semana-->
                                         <label for="description">Texto</label>
-                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control">{{ $data->description ?? old('description') }}</textarea>
+                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control editor">{{ $data->description ?? old('description') }}</textarea>
                                         @error('description')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror

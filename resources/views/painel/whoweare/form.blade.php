@@ -46,7 +46,7 @@
                                     <div class="form-group">
                                         <!--resumo summary-->
                                         <label for="description">Resumo</label>
-                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control">{{ $data->description ?? old('description') }}</textarea>
+                                        <textarea name="description" id="description" cols="30" rows="10" class="form-control editor">{{ $data->description ?? old('description') }}</textarea>
                                         @error('description')
                                             <div class="alert alert-danger mt-2" role="alert">
                                                 {{ $message }}

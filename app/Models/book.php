@@ -15,15 +15,15 @@ class book extends Model
     protected $primaryKey = 'id';
     //variavel que recebe o nome das colunas que podem ser preenchidas
     protected $fillable = [
-        'id', 
+        'id',
         'title', //titulo do livro
         'subtitle', //subtitulo do livro
-        'pdf', //arquivo do livro
+        'images', //arquivo do livro
         'summary', //resumo do livro
         'image1', //imagem de destaque do livro
         'image2', //imagem da capa do livro
         'category', //categoria do livro
-        'created_at', 
+        'created_at',
         'updated_at'
     ];
 }

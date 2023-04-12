@@ -12,22 +12,27 @@ class BookSiteController extends Controller
     {
         $this->model = $model;
     }
-    
+
     public function index()
     {
+        $flipbooks = \DB::table('flipbook')->where('status', '1')->get();
         $registros = $this->model->all();
         $registro = $registros->last();
         return view('site.books.index', [
             'registros' => $registros,
-            'registro' => $registro
+            'registro' => $registro,
+            'flipbooks' => $flipbooks
         ]);
     }
 
     public function show($id)
     {
         $registro = $this->model->find($id);
+        $images = explode(",",$registro->images);
+
         return view('site.books.show', [
-            'registro' => $registro
+            'flipbook' => $registro,
+            'content' => json_decode($registro->images),
         ]);
     }
 }

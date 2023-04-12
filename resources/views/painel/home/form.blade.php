@@ -43,7 +43,7 @@
                                     <div class="form-group">
                                         <!--descricao section2-description-->
                                         <label for="section2_description">Descrição da sessao 2</label>
-                                        <textarea name="section2_description" id="section2_description" cols="30" rows="10" class="form-control">{{ $data->section2_description ?? old('section2_description') }}</textarea>
+                                        <textarea name="section2_description" id="section2_description" cols="30" rows="10" class="form-control editor">{{ $data->section2_description ?? old('section2_description') }}</textarea>
                                         @error('section2_description')
                                             <div class="alert alert-danger mt-2" role="alert">
                                                 {{ $message }}
@@ -94,7 +94,7 @@
                                     <div class="form-group">
                                         <!--section3-description-card1-->
                                         <label for="section3_description_card1">Descrição do card 1 da sessao 3</label>
-                                        <textarea name="section3_description_card1" id="section3_description_card1" cols="30" rows="10" class="form-control">{{ $data->section3_description_card1 ?? old('section3_description_card1') }}</textarea>
+                                        <textarea name="section3_description_card1" id="section3_description_card1" cols="30" rows="10" class="form-control editor">{{ $data->section3_description_card1 ?? old('section3_description_card1') }}</textarea>
                                         @error('section3_description_card1')
                                             <div class="alert alert-danger mt-2" role="alert">
                                                 {{ $message }}
@@ -114,7 +114,7 @@
                                     <div class="form-group">
                                         <!--section3-description-card2-->
                                         <label for="section3_description_card2">Descrição do card 2 da sessao 3</label>
-                                        <textarea name="section3_description_card2" id="section3_description_card2" cols="30" rows="10" class="form-control">{{ $data->section3_description_card2 ?? old('section3_description_card2') }}</textarea>
+                                        <textarea name="section3_description_card2" id="section3_description_card2" cols="30" rows="10" class="form-control editor">{{ $data->section3_description_card2 ?? old('section3_description_card2') }}</textarea>
                                         @error('section3_description_card2')
                                             <div class="alert alert-danger mt-2" role="alert">
                                                 {{ $message }}
@@ -134,7 +134,7 @@
                                     <div class="form-group">
                                         <!--section3-description-card3-->
                                         <label for="section3_description_card3">Descrição do card 3 da sessao 3</label>
-                                        <textarea name="section3_description_card3" id="section3_description_card3" cols="30" rows="10" class="form-control">{{ $data->section3_description_card3 ?? old('section3_description_card3') }}</textarea>
+                                        <textarea name="section3_description_card3" id="section3_description_card3" cols="30" rows="10" class="form-control editor">{{ $data->section3_description_card3 ?? old('section3_description_card3') }}</textarea>
                                         @error('section3_description_card3')
                                             <div class="alert alert-danger mt-2" role="alert">
                                                 {{ $message }}
@@ -155,7 +155,7 @@
                                     <div class="form-group">
                                         <!--section4-description-->
                                         <label for="section4_description">Descrição da sessao 4</label>
-                                        <textarea name="section4_description" id="section4_description" cols="30" rows="10" class="form-control">{{ $data->section4_description ?? old('section4_description') }}</textarea>
+                                        <textarea name="section4_description" id="section4_description" cols="30" rows="10" class="form-control editor">{{ $data->section4_description ?? old('section4_description') }}</textarea>
                                         @error('section4_description')
                                             <div class="alert alert-danger mt-2" role="alert">
                                                 {{ $message }}
